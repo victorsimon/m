@@ -69,6 +69,36 @@ class MeasureTest(unittest.TestCase):
         self.assertEqual(by["truthfulness"], 1)
         self.assertEqual(by["completeness"], 1)
 
+    def test_structure_rules(self):
+        doc = """[GLO.1] {kind: definition; defines: Task; variants: task, job}
+A piece of work.
+
+[GLO.2] {kind: definition; defines: Chore; variants: job}
+A small piece of work.
+
+[A.1] {kind: claim; derives: INTENT; evidence: a source}
+A [[task]] and a [[chore]] exist; `task` is literal.
+
+[A.1] {kind: rule; derives: A.1}
+A [[job]].
+
+[A.2] {kind: rule derives: INTENT}
+Text.
+
+[A.3]{kind: rule; derives: INTENT}
+"""
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d, "doc.md")
+            p.write_text(doc)
+            details = {(v[0], v[1], v[2]) for v in measure([p])}
+        self.assertIn(("form", "A.1", "duplicate identifier"), details)
+        self.assertIn(("form", "A.2", "invalid kind 'rule derives: INTENT'"), details)
+        self.assertIn(("form", "A.2", "missing key 'derives'"), details)
+        self.assertIn(("form", "doc.md:16", "malformed header"), details)
+        self.assertIn(("sharpness", "job", "variant declared by ['Chore', 'Task']"), details)
+        self.assertNotIn("truthfulness", {v[0] for v in details})
+        self.assertFalse(any(v[2] == "unmarked 'task'" for v in details))
+
 
 if __name__ == "__main__":
     unittest.main()
