@@ -175,4 +175,4 @@ A set of [[artefacts]] used to test an [[evaluator]] or a candidate.
 A [[corpus]] hidden from the candidates.
 
 [GLO.60] {kind: definition; defines: Statistical verifier; variants: statistical verifier}
-A fixed prompt template run N times on each of M models, whose concordance measures a [[judgement]].
+A fixed decision question sent N times to fixed decision models, whose probabilities measure a [[judgement]].
