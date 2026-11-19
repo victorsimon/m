@@ -4,3 +4,4 @@
 - 2026-11-19 — v1: intent established (.hermes/intent/project.md); slop figures validated; measurement, tooling and evaluation plan added.
 - 2026-11-19 — v2: glossary; fixed evaluator (eval/: clean and seeded corpus of section 2, truth, vague-word list, counting conventions); hold-out corpus kept outside the repository.
 - 2026-11-19 — v2 evaluator rejected (review w3: not ready). Decisions: draft first; structured elements; pure-formula counting (a defect counts in every figure it breaks); truth, clean corpus and hold-out isolated from evaluated agents.
+- 2026-11-19 — v3: glossary and draft rewritten as structured elements; tools/measure.py computes the mechanical figures (all 0); rejected eval/ removed; vague-word and Spanish stopword lists in docs/lists/.

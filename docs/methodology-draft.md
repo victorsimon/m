@@ -1,179 +1,241 @@
-# Task-resolution methodology — draft v2
-
-> Status: conceptual draft. Deliberately high level of abstraction; not yet grounded in any harness or tool.
-> Items marked **(proposal)** are not validated yet.
-> Glossary: `docs/glossary.md`.
+# Task-resolution methodology
 
 ## 0. Purpose
 
-Establish a task-resolution methodology that applies at any scale: a single agent, an agent ecosystem, a company, a group of companies.
+[PUR.1] {kind: rule; derives: INTENT}
+This methodology resolves [[tasks]] at any scale: a single agent, a system of agents, a company, a group of companies.
 
-**Scale invariance principle:** a concept that only makes sense at one scale is either redundant or badly framed.
+[PUR.2] {kind: rule; derives: PUR.1}
+Scale invariance: a concept that only makes sense at one scale is redundant or badly framed.
 
-**Self-application principle:** the methodology also applies to itself and to its own agreements; no piece is exempt.
+[PUR.3] {kind: rule; derives: INTENT}
+Self-application: the methodology applies to itself and to its own [[agreements]]; no part is exempt.
 
 ## 1. Structure
 
-```
-            Intent  (distilled per level)
-   ┌───────────┬─────────────┬───────────┐
-   │   Tasks   │  Capability │  Quality  │
-   └───────────┴─────────────┴───────────┘
-   ═════ Communication (base agreement) ═════
-```
+[STR.1] {kind: rule; derives: PUR.1}
+The methodology has five parts: [[intent]] above, [[communication]] beneath, and between them [[tasks]], [[capability]] and [[quality]].
 
-- **Communication**: the substrate. It is the base agreement on which everything else is built.
-- **Intent**: above everything. It gives meaning to everything else.
-- **Tasks**: the problem.
-- **Capability**: the means to solve it.
-- **Quality**: the judgement, that is, what is pursued, achieved and applied.
+[STR.2] {kind: rule; derives: STR.1}
+[[communication]] is the substrate: everything else is built on the [[agreement]].
 
-## 2. Communication — the base agreement
+[STR.3] {kind: rule; derives: STR.1}
+[[intent]] is above everything and gives meaning to everything else.
 
-It is cross-cutting and foundational. It is understood as the medium, not just a channel. It is the first thing agreed when any working group forms.
+[STR.4] {kind: rule; derives: STR.1}
+[[tasks]] are the problem, [[capability]] is the means to resolve it, and [[quality]] is what the work is judged against.
 
-Components of the agreement:
+## 2. Communication
 
-- **Language**: shared language and vocabulary (glossary).
-- **Channels**: where information flows.
-- **Format**: the shape of exchanges.
-- **Moments**: when communication happens (milestones, cadence, checkpoints).
-- **Commitments**: what is promised for delivery and how delivery is recognised.
-- **Exceptions**: what to do when something does not fit the agreement.
+[COM.1] {kind: rule; derives: STR.2}
+[[communication]] is cross-cutting and foundational: it is the medium of every relation, not only a [[channel]].
 
-Everything else is communication:
+[COM.2] {kind: rule; derives: COM.1}
+The [[agreement]] is the first thing a [[working group]] settles when it forms.
 
-| Concept | As communication |
+[COM.3] {kind: rule; derives: COM.2}
+The [[agreement]] has six components: [[language]], [[channels]], [[format]], [[moments]], [[commitments]] and [[exceptions]].
+
+[COM.4] {kind: rule; derives: COM.1}
+Every relation of the methodology is [[communication]]:
+
+| Relation | As [[communication]] |
 |---|---|
-| Distilling intent | downward |
-| Verifying or reporting a result | upward |
-| Consulting another | lateral |
-| Written know-how | deferred in time |
-| Regulation | an already-made judgement, communicated |
+| [[distilling]] [[intent]] | downward |
+| [[verifying]] or reporting a result | upward |
+| [[consulting another]] | lateral |
+| written [[know-how]] | deferred in time |
+| [[regulation]] | a [[judgement]] already made |
 
-The agreement **is monitored and verified like anything else**. It does not expire with time or use. When it fails a verification, it is reviewed and, if needed, updated.
+[COM.5] {kind: rule; derives: PUR.3}
+The [[agreement]] is [[monitored]] and [[verified]] like any other [[artefact]]. It does not expire with time or use.
 
-Properties of a communication **(proposal)**: fidelity, shared language, direction, timing (immediate or deferred) and recipient (person, agent or environment).
+[COM.6] {kind: rule; derives: COM.5}
+When the [[agreement]] fails a [[verification]], it is [[reviewed]]; when the [[review]] finds a [[defect]], the [[agreement]] is updated.
+
+[COM.7] {kind: rule; derives: COM.1; status: proposal}
+Properties of a [[communication]]: fidelity, shared [[language]], direction, timing (immediate or deferred) and recipient (person, agent or [[environment]]).
 
 ## 3. Intent
 
-- It is set **at each level**.
-- It is **inherited non-strictly**: each level's intent complements the one above in order to fulfil it.
-- It is **distilled** from level to level: at each step something is lost, something is added and something is translated.
-- Verification checks that the result fulfils the intent of its level, and also that this intent still serves the one above.
-- Risk of **drift**: small deviations at each distillation can end up emptying the original intent of meaning.
+[INT.1] {kind: rule; derives: STR.3}
+[[intent]] is set at each [[level]].
+
+[INT.2] {kind: rule; derives: INT.1}
+[[intent]] is inherited non-strictly: the [[intent]] of each [[level]] complements the [[intent]] of the [[level]] above so as to fulfil it.
+
+[INT.3] {kind: rule; derives: INT.2}
+[[intent]] is [[distilled]] from [[level]] to [[level]].
+
+[INT.4] {kind: rule; derives: INT.2}
+[[verification]] checks that a result fulfils the [[intent]] of its [[level]] and that this [[intent]] still serves the [[intent]] of the [[level]] above.
+
+[INT.5] {kind: rule; derives: INT.3}
+[[drift]] can empty the original [[intent]] of meaning.
 
 ## 4. Tasks
 
-A task is, among other things, a problem.
+[TSK.1] {kind: rule; derives: STR.4}
+A [[task]] arises on request, out of need, or for maintenance, because the [[environment]] is alive.
 
-- **Definition**: on request, out of need, or for maintenance (the environment is alive).
-- **Organisation**: decomposition, dependencies, prioritisation and classification.
-- **Management**: execution, verification and measurement.
+[TSK.2] {kind: rule; derives: STR.4}
+Organising [[tasks]] covers [[decomposition]], dependencies, prioritisation and classification.
 
-**Decomposition is the methodology**: a way of thinking for solving problems. It also makes the methodology recursive: a task decomposes into tasks, and each one again has its own intent, capability and quality.
+[TSK.3] {kind: rule; derives: STR.4}
+Managing [[tasks]] covers execution, [[verification]] and measurement.
 
-Decomposing and delegating forms a new group, so at each level the communication agreement must be inherited or renegotiated. The usual case would be to inherit the base (language, channels) and adjust the local parts (moments, commitments, exceptions) **(proposal)**.
+[TSK.4] {kind: rule; derives: PUR.1}
+[[decomposition]] is the methodology: a way of thinking for solving problems. It makes the methodology recursive: a [[task]] [[decomposes]] into [[tasks]], and each one again has its own [[intent]], [[capability]] and [[quality]].
 
-**Autonomy**: a goal of each task, not a standard or a whole. Its boundary is set by the agreement's exceptions.
+[TSK.5] {kind: rule; derives: TSK.4, COM.2; status: proposal}
+[[decomposing]] and delegating a [[task]] creates a new [[working group]], so at each [[level]] the [[agreement]] is inherited or renegotiated: the base ([[language]], [[channels]]) is inherited and the local parts ([[moments]], [[commitments]], [[exceptions]]) are adjusted.
+
+[TSK.6] {kind: rule; derives: TSK.4}
+[[autonomy]] is a goal of each [[task]], not a standard or a whole. Its boundary is set by the [[exceptions]] of the [[agreement]].
 
 ## 5. Capability
 
-### Intrinsic (the executor's own)
-- **Power**: the executor and the effort it applies.
-- **Speed**: how much can be done in parallel.
-- **Context management**: what the executor has in mind at each moment.
+[CAP.1] {kind: rule; derives: STR.4}
+[[capability]] is intrinsic to the [[executor]] or extrinsic to it.
 
-### Extrinsic (lives outside the executor)
-This is know-how. Analogy: the person is the model; documents, courses and regulations are the know-how, and they belong to the organisation.
+[CAP.2] {kind: rule; derives: CAP.1}
+Intrinsic [[capability]] comprises [[power]], [[speed]] and [[context management]].
 
-- **Written know-how**:
-  - *Descriptive*: how things are (documentation, glossary).
-  - *Procedural*: how things are done (courses, methods).
-  - *Normative*: what must and must not be done (regulation). It does not extend capability, it limits it, and it connects directly with Quality.
-- **Embodied know-how, or consulting another**: borrowing another's judgement, not just their information.
+[CAP.3] {kind: rule; derives: CAP.1}
+Extrinsic [[capability]] is [[know-how]]. Analogy: a person is the model; documents, courses and [[regulations]] are the [[know-how]], and they belong to the organisation.
 
-Consequences of know-how living outside: it has to be retrieved, it can grow with what is learned, and it can be reused even when the executor changes.
+[CAP.4] {kind: rule; derives: CAP.3}
+Written [[know-how]] is descriptive (how things are: documentation, the [[glossary]]), procedural (how things are done: courses, methods) or normative (what must and must not be done: [[regulation]]).
 
-**Learning**: the environment is alive, so know-how is not only accumulated; it is also reviewed and retired when it stops being valid.
+[CAP.5] {kind: rule; derives: CAP.4}
+Normative [[know-how]] does not extend [[capability]]; it limits it, and it connects directly with [[quality]].
 
-Reference: tacit versus explicit knowledge (Polanyi, Nonaka).
+[CAP.6] {kind: rule; derives: CAP.3}
+Embodied [[know-how]] is [[consulting another]].
+
+[CAP.7] {kind: rule; derives: CAP.3}
+Because [[know-how]] lives outside the [[executor]], it has to be retrieved, it can grow with what is learned, and it can be reused when the [[executor]] changes.
+
+[CAP.8] {kind: rule; derives: CAP.7, TSK.1}
+The [[environment]] is alive, so [[know-how]] is accumulated, [[reviewed]] and retired when it stops being valid.
+
+[CAP.9] {kind: claim; derives: CAP.3; evidence: Polanyi 1966, The Tacit Dimension. Nonaka and Takeuchi 1995, The Knowledge-Creating Company}
+The distinction between tacit and explicit knowledge is established in the literature.
 
 ## 6. Quality
 
-It is the concept to pursue, achieve and apply. It is the foundation from which these derive:
+[QUA.1] {kind: rule; derives: STR.4}
+[[constraints]], [[verification]] and [[monitoring]] all derive from [[quality]]; none of them is a starting point of its own.
 
-- **Constraints**, as a consequence of the quality judgement.
-- **Verification and monitoring**, as the application of that judgement: verification is point-in-time, monitoring is continuous.
+[QUA.2] {kind: rule; derives: QUA.1}
+The attributes of [[quality]] are fitness for purpose, verifiability, performance, security, resilience and maintainability.
 
-Attributes: fitness for purpose, verifiability, performance, security, resilience and maintainability.
+[QUA.3] {kind: rule; derives: QUA.1}
+A [[verification]] returns a [[diagnosis]], not a yes or a no.
 
-### Graded verification
+[QUA.4] {kind: rule; derives: QUA.3}
+[[severity]] and [[urgency]] are independent of each other.
 
-Verification does not return a yes or no, but a **diagnosis** with these dimensions:
+[QUA.5] {kind: rule; derives: QUA.3}
+The possible responses to a [[diagnosis]] are: accept, accept with reservations, correct, escalate, or [[review]] the [[agreement]] or the [[intent]].
 
-- **Scope**: how much is affected.
-- **Severity**: how much harm it does.
-- **Urgency**: how much time there is.
-- **Tolerability**: whether it can be lived with.
-- **Location** **(proposal)**: where the failure lies (in the task, the capability, the quality, the agreement or the intent).
-
-Severity and urgency are independent of each other.
-
-Possible responses: accept, accept with reservations, correct, escalate, or review the agreement or the intent.
-
-**What is tolerable within the agreement is resolved at its own level; what is not gets escalated.** Tolerability marks the boundary of autonomy.
+[QUA.6] {kind: rule; derives: QUA.5, TSK.6}
+What is [[tolerable]] within the [[agreement]] is resolved at its own [[level]]; what is not is escalated. [[tolerability]] marks the boundary of [[autonomy]].
 
 ## 7. Slop
 
-Something impeccable is beautiful; slop introduces ugliness. Images: a line that breaks the metre of a poem; a puzzle piece forced into a place it does not belong. Impeccable means zero slop.
+[SLP.1] {kind: rule; derives: INTENT}
+Something [[impeccable]] is beautiful; [[slop]] introduces ugliness. Images: a line that breaks the metre of a poem; a puzzle piece forced into a place it does not belong.
 
-### Figures
+[SLP.2] {kind: rule; derives: SLP.1}
+The [[figures]] are [[form]], [[fit]], [[economy]], [[completeness]], [[order]], [[sharpness]] and [[truthfulness]].
 
-| Figure | Image | Slop in our work |
+[SLP.3] {kind: rule; derives: SLP.2}
+| [[figure]] | Image | [[slop]] in this work |
 |---|---|---|
-| **Form** | the line that breaks the metre | a term with two meanings; a section in the wrong language |
-| **Fit** | the forced piece | a rule that contradicts another; something not traceable to the intent |
-| **Economy** | the filler syllable | the same thing said twice; a sentence removable without loss |
-| **Completeness** | the hole in the puzzle | a concept used but not defined; a task without verification |
-| **Order** | stanzas out of place | something used before it is defined |
-| **Sharpness** | the blurred piece | a sentence with two readings |
-| **Truthfulness** | the trompe-l'oeil | claiming "verified" without evidence |
+| [[form]] | the line that breaks the metre | a [[term]] with two meanings; an [[element]] in the wrong [[language]] |
+| [[fit]] | the forced piece | an [[element]] that contradicts another; an [[element]] not traceable to the [[intent]] |
+| [[economy]] | the filler syllable | the same thing said twice |
+| [[completeness]] | the hole in the puzzle | a [[term]] used and not defined; a [[task]] without [[verification]] |
+| [[order]] | stanzas out of place | a [[term]] used before its definition |
+| [[sharpness]] | the blurred piece | a sentence with two readings |
+| [[truthfulness]] | the trompe-l'oeil | a [[claim]] of [[verification]] without [[evidence]] |
 
-### Measurement (proposal)
+[SLP.4] {kind: rule; derives: SLP.2}
+An [[artefact]] consists of headings and [[elements]]. Headings are labels and are not measured; any other text is [[slop]] of [[form]].
 
-An artefact A is structured: elements E with identifiers, a glossary G, declared patterns P, and declared relations `defines(e,t)`, `uses(e,t)`, `derives(e,x)`, `covers(e,c)`, `evidence(e)`, plus position `pos(e)`.
+[SLP.5] {kind: rule; derives: SLP.4}
+An [[element]] starts with a header line: its identifier in square brackets, then its metadata in braces as key-value pairs separated by semicolons. Its text runs to the next header line or heading.
 
-| Figure | Violations V |
+[SLP.6] {kind: rule; derives: SLP.5}
+Metadata keys: kind (definition, rule, [[claim]] or question); defines and variants (only in a definition); derives (required except in a definition: identifiers of [[elements]], `INTENT` or `AGREEMENT`); [[evidence]] (only in a [[claim]]); status (proposal, until validated).
+
+[SLP.7] {kind: rule; derives: SLP.5}
+Every use of a [[term]] is written between double square brackets, in one of the variants its definition declares; marking it is the formalisation. Text that is not marked is ordinary vocabulary.
+
+[SLP.22] {kind: rule; derives: SLP.7; status: proposal}
+Text between backticks is a literal and is not checked for unmarked variants.
+
+[SLP.8] {kind: rule; derives: SLP.7}
+Definitions live only in the [[glossary]]; each one uses only [[terms]] defined before it, and never its own [[term]].
+
+[SLP.9] {kind: rule; derives: SLP.2; status: proposal}
+| [[figure]] | Violation |
 |---|---|
-| Form | #{(e,p) ∈ E×P : e breaks p} |
-| Fit | #{e : no `derives` path to the intent} + #MUS(Σ) |
-| Economy | \|Σ\| − \|minimum subset equivalent to Σ\| |
-| Completeness | \|terms used \ terms defined\| |
-| Order | #{(e,t) : uses(e,t) ∧ pos(e) < pos(defines(t))} |
-| Sharpness | #{terms with >1 definition} + #{uses of words from a declared vague list} |
-| Truthfulness | #{claims e : evidence(e) = ∅} |
+| [[form]] | a malformed header; a duplicate identifier; an invalid kind; a missing required key; text outside [[elements]] and headings; an unmarked occurrence of a declared variant; three or more words from the Spanish stopword list in one [[element]]; a definition that uses its own [[term]] |
+| [[fit]] | an [[element]] whose chain of derivation does not reach `INTENT` or `AGREEMENT` (a definition is traceable when its [[term]] is used by a traceable [[element]]); each minimal unsatisfiable subset of [[elements]] |
+| [[economy]] | the size of Σ' minus the size of the smallest subset equivalent to Σ', where Σ' excludes the [[elements]] of every minimal unsatisfiable subset |
+| [[completeness]] | each distinct marked [[term]] that no definition declares |
+| [[order]] | each pair of an [[element]] and a [[term]] it uses before the definition of that [[term]] in the same [[artefact]] |
+| [[sharpness]] | each [[term]] with more than one definition; each variant declared by more than one [[term]]; each occurrence of an entry of the vague-word list, matched case-insensitively at word boundaries, longest entry first, without overlaps |
+| [[truthfulness]] | each [[claim]] without [[evidence]] |
 
-Slop(A) = Σ V_f. A is impeccable iff Slop(A) = 0. No weights.
+[SLP.10] {kind: rule; derives: SLP.9}
+Counting is pure: an [[element]] counts in every [[figure]] it breaks. The [[slop]] of an [[artefact]] is the sum of its violations over all [[figures]], with no weights; an [[artefact]] is [[impeccable]] if and only if that sum is zero.
 
-Contradiction and redundancy are made countable by writing elements as logical formulas Σ = {φₑ}: a contradiction is a minimal unsatisfiable subset (MUS); e is redundant iff Σ \ {φₑ} ⊨ φₑ. Judgement moves from verification to formalisation, where it is made once and recorded. The logic must be decidable (candidate: description logics).
+[SLP.11] {kind: rule; derives: SLP.9; status: proposal}
+Contradiction and redundancy become countable when [[elements]] are written as logical formulas: a contradiction is a minimal unsatisfiable subset, and an [[element]] is redundant when the rest entails it. The [[judgement]] moves from [[verification]] to formalisation, where it is made once and recorded. The logic must be decidable; description logics are the candidate.
 
-### Tooling candidates (proposal, to be evaluated)
+[SLP.12] {kind: rule; derives: SLP.11}
+Until a logic is chosen, contradiction and redundancy are judged by a [[statistical verifier]]: a versioned prompt template with a typed output schema, run three times on each of two models. Only pairs of [[elements]] that share a [[term]] are compared.
 
-OWL 2 + reasoner (HermiT, Pellet, ELK); SHACL; SPARQL or Datalog; Z3 / MARCO for MUS; Alloy; Attempto Controlled English (APE, RACE); Vale. Temporal and graded aspects may need TLA+ or Alloy 6.
+[SLP.13] {kind: rule; derives: SLP.12}
+With k votes for a [[defect]] out of N runs, k = 0 decides that there is no [[defect]], k = N decides that there is one, and any other k is escalated to the user. An output that fails the schema counts as a failure, not as a vote.
 
-### Evaluation plan
+[SLP.14] {kind: rule; derives: SLP.12}
+Each [[judgement]] is recorded with the hash of its input, the hash of the template, the models, N and k. A new [[verification]] reads the record and only judges again when a hash changes.
 
-Follow the pattern of karpathy/autoresearch:
+[SLP.15] {kind: rule; derives: SLP.12}
+The [[statistical verifier]] is itself evaluated against a [[corpus]] with known [[slop]], like any candidate.
 
-1. A fixed evaluator the evaluated agent cannot modify: a corpus with deliberately seeded slop and known true counts per figure, plus a hidden hold-out corpus.
-2. Metric: Σ_f |V_f detected − V_f true|; must be 0, and two runs must give the same number. Ties go to the simpler stack.
-3. One editable implementation per candidate stack; keep/discard via git; results logged.
-4. The loop is a delegated task with its own agreement: autonomous inside, validated by the user at the end.
+[SLP.16] {kind: rule; derives: SLP.11; status: proposal}
+Tooling candidates: OWL 2 with a reasoner (HermiT, Pellet, ELK); SHACL; SPARQL or Datalog; Z3 or MARCO for minimal unsatisfiable subsets; Alloy; Attempto Controlled English (APE, RACE); Vale. Temporal and graded aspects may need TLA+ or Alloy 6.
+
+[SLP.17] {kind: rule; derives: SLP.15}
+Candidates are compared following the pattern of karpathy/autoresearch: a fixed [[evaluator]], one editable implementation per candidate, keep or discard through git, and every result logged.
+
+[SLP.18] {kind: rule; derives: SLP.17}
+The candidates cannot read the truth, the clean [[corpus]] or the [[hold-out]]; the score is computed by a script they cannot see.
+
+[SLP.19] {kind: rule; derives: SLP.17; status: proposal}
+The error of a candidate is the size of the symmetric difference between the detected and the true sets of violations, each violation identified by [[figure]], [[element]] and detail. A candidate passes only with zero error on every [[corpus]] and identical output on two runs.
+
+[SLP.20] {kind: rule; derives: SLP.17; status: proposal}
+Ties go to the candidate with fewer non-blank lines of implementation and configuration.
+
+[SLP.21] {kind: rule; derives: SLP.17, TSK.6}
+The comparison loop is a delegated [[task]] with its own [[agreement]]: autonomous inside, validated by the user at the end.
 
 ## 8. Open questions
 
-- Is quality a property of the result, or of the relationship between task and result?
-- Does autonomy depend on verifiability, so that the more verifiable a result is, the more it can be delegated? **(proposal)**
-- What are the dimensions of measurement, and how is product quality separated from process quality?
-- When monitoring, how is intent drift told apart from legitimate evolution?
+[OPN.1] {kind: question; derives: STR.4}
+Is [[quality]] a property of the result, or of the relation between [[task]] and result?
+
+[OPN.2] {kind: question; derives: TSK.6; status: proposal}
+Does [[autonomy]] depend on verifiability, so that the more verifiable a result is, the more it can be delegated?
+
+[OPN.3] {kind: question; derives: TSK.3}
+What are the dimensions of measurement, and how is the [[quality]] of a product separated from the [[quality]] of a process?
+
+[OPN.4] {kind: question; derives: INT.5}
+During [[monitoring]], how is [[drift]] told apart from legitimate evolution?
