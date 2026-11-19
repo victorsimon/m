@@ -11,6 +11,7 @@ Develop and refine, through iterations, a task- and problem-resolution methodolo
 - An iteration closes only when its result passes them too.
 - Everything can be quantified and classified; concepts such as tolerability are derived from that quantification and classification.
 - The same verification applied twice to the same artefact gives the same result.
+- There are no invariants: anything may evolve, change, disappear, be created or move.
 
 ## History
 - 2026-11-19: intent established with the user.
