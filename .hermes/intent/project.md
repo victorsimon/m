@@ -15,3 +15,4 @@ Develop and refine, through iterations, a task- and problem-resolution methodolo
 
 ## History
 - 2026-11-19: intent established with the user.
+- 2026-11-19: drift — evaluator built on a draft and glossary that fail the slop figures (review w3). Outcome: result rejected; the draft is made impeccable first, then the evaluator is rebuilt with structured elements, pure-formula counting and an isolated truth.
