@@ -1,0 +1,11 @@
+id	figure	element	description
+F1	form	COM.5	element written in Spanish; the agreement says English
+F2	form	COM.1	"Capacity" instead of the glossary term "Capability"
+T1	fit	COM.12,COM.14	contradiction: expires after 30 days vs does not expire with time or use (one MUS)
+T2	fit	COM.10	greeting rule derives from nothing in the agreement or the intent
+E1	economy	COM.9	entailed by COM.4 (Channels: where information flows)
+C1	completeness	COM.7	"escalation board" is used and not defined in the glossary
+O1	order	COM.7	uses "commitment" before COM.8 defines Commitments
+S1	sharpness	COM.6	vague word "appropriate"
+S2	sharpness	COM.13	vague word "sometimes"
+V1	truthfulness	COM.15	empirical claim with no evidence

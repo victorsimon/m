@@ -1,7 +1,8 @@
-# Task-resolution methodology — draft v1
+# Task-resolution methodology — draft v2
 
 > Status: conceptual draft. Deliberately high level of abstraction; not yet grounded in any harness or tool.
 > Items marked **(proposal)** are not validated yet.
+> Glossary: `docs/glossary.md`.
 
 ## 0. Purpose
 
