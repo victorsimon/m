@@ -2,6 +2,7 @@
 """Statistical verifier client (methodology SLP.12-SLP.14). Needs OPENROUTER_API_KEY.
 
 Usage: tools/verifier.py pilot CALIBRATION_JSON N   -> runs the first N items once per model, prints p and cost
+       tools/verifier.py calibrate CALIBRATION_JSON OUT_DIR -> all items, all runs; writes results.jsonl and thresholds.json
 """
 import hashlib
 import json
@@ -49,6 +50,22 @@ def ask(model, kind, state):
     return float(p), float(data["usage"]["cost"]), data["model"]
 
 
+def thresholds(rows):
+    """SLP.24: per (question, model), tau_yes = max p over 'no' items, tau_no = min p over 'yes' items."""
+    out = {}
+    for r in rows:
+        t = out.setdefault(f"{r['kind']}|{r['model']}", {"tau_yes": 0.0, "tau_no": 1.0, "failures": 0})
+        if r["p"] is None:
+            t["failures"] += 1
+        elif r["label"]:
+            t["tau_no"] = min(t["tau_no"], r["p"])
+        else:
+            t["tau_yes"] = max(t["tau_yes"], r["p"])
+    for t in out.values():
+        t["passes"] = t["tau_yes"] < t["tau_no"] and t["failures"] == 0
+    return out
+
+
 def state_of(kind, item):
     if kind == "contradiction":
         return {"a": item["a"], "b": item["b"]}
@@ -66,3 +83,24 @@ if __name__ == "__main__" and sys.argv[1:2] == ["pilot"]:
                 total += cost
                 print(f"{kind}\t{item['id']}\t{item['label']}\t{model}\t{served}\tp={p:.3f}\tcost={cost:.8f}")
     print(f"total_cost_usd\t{total:.8f}")
+
+if __name__ == "__main__" and sys.argv[1:2] == ["calibrate"]:
+    from pathlib import Path
+    cal, out = json.load(open(sys.argv[2])), Path(sys.argv[3])
+    rows = []
+    for kind in ("contradiction", "redundancy"):
+        for item in cal[kind]:
+            for model, runs in MODELS.items():
+                for run in range(runs):
+                    row = {"kind": kind, "id": item["id"], "label": item["label"], "model": model,
+                           "run": run, "template": TEMPLATE_HASH, "p": None, "cost": 0.0, "served": None}
+                    try:
+                        row["p"], row["cost"], row["served"] = ask(model, kind, state_of(kind, item))
+                    except Exception as exc:  # SLP.13: a failure, not a vote
+                        row["error"] = repr(exc)
+                    rows.append(row)
+    (out / "results.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+    th = thresholds(rows)
+    (out / "thresholds.json").write_text(json.dumps(th, indent=2, sort_keys=True) + "\n")
+    print(json.dumps(th, indent=2, sort_keys=True))
+    print(f"calls\t{len(rows)}\tcost_usd\t{sum(r['cost'] for r in rows):.6f}")

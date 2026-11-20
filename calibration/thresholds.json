@@ -1,0 +1,26 @@
+{
+  "contradiction|openai/gpt-6-luna-decisions": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.01,
+    "tau_yes": 0.54
+  },
+  "contradiction|typesafe/jev-1.14": {
+    "failures": 0,
+    "passes": true,
+    "tau_no": 0.6,
+    "tau_yes": 0.53
+  },
+  "redundancy|openai/gpt-6-luna-decisions": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.66,
+    "tau_yes": 0.99
+  },
+  "redundancy|typesafe/jev-1.14": {
+    "failures": 0,
+    "passes": true,
+    "tau_no": 0.73,
+    "tau_yes": 0.16
+  }
+}
