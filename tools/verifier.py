@@ -3,6 +3,7 @@
 
 Usage: tools/verifier.py pilot CALIBRATION_JSON N   -> runs the first N items once per model, prints p and cost
        tools/verifier.py check CALIBRATION_JSON OUT_DIR -> recompute thresholds and validation from results.jsonl
+       tools/verifier.py judge GLOSSARY DOC THRESHOLDS_JSON RECORD_JSONL -> SLP.12-14 over a document
        tools/verifier.py calibrate CALIBRATION_JSON OUT_DIR MODELS RUNS -> calibrate on split cal, check on split val
 """
 import hashlib
@@ -167,3 +168,73 @@ if __name__ == "__main__" and sys.argv[1:2] == ["calibrate"]:
               f"\tval_wrong={v.get('wrong')}\tval_escalated={v.get('escalated')}\tval_failures={v.get('failures')}"
               f"\tdeterministic={v.get('deterministic')}")
     print(f"calls\t{len(rows)}\tcost_usd\t{sum(r['cost'] for r in rows):.6f}")
+
+PANELS = {  # SLP.12: model -> runs (1 when its output repeats exactly)
+    "contradiction": {"microsoft/microsoft-decision-1.1": 1, "google/gemini-decision-1": 1},
+    "redundancy": {"microsoft/microsoft-decision-1.1": 1, "perplexity/pplx-decider-v1.2": 3, "typesafe/jev-1.14": 3},
+}
+
+if __name__ == "__main__" and sys.argv[1:2] == ["judge"]:
+    # tools/verifier.py judge GLOSSARY DOC THRESHOLDS_JSON RECORD_JSONL
+    from concurrent.futures import ThreadPoolExecutor
+    from itertools import combinations
+    from pathlib import Path
+    import measure
+
+    glossary, doc, th_path, record = (Path(a) for a in sys.argv[2:6])
+    th = json.loads(th_path.read_text())
+    variants = {}
+    for e in measure.parse(glossary, []):
+        for v in e["meta"].get("variants", "").split(","):
+            if v.strip():
+                variants[v.strip().lower()] = e["meta"]["defines"]
+    els = [e for e in measure.parse(doc, []) if e["kind"] != "definition"]
+    for e in els:
+        e["uses"] = {variants[u.strip().lower()] for u in measure.MARK.findall(e["text"]) if u.strip().lower() in variants}
+        e["plain"] = measure.MARK.sub(r"\1", e["text"])
+    tasks = [("contradiction", (a["id"], b["id"]), {"a": a["plain"], "b": b["plain"]})
+             for a, b in combinations(els, 2) if a["uses"] & b["uses"]]
+    for e in els:
+        ctx = [o for o in els if o is not e and o["uses"] & e["uses"]]
+        if ctx:
+            tasks.append(("redundancy", (e["id"],), {"target": e["plain"], "context": [o["plain"] for o in ctx]}))
+
+    old = {}
+    if record.exists():
+        for line in record.read_text().splitlines():
+            j = json.loads(line)
+            old[(j["kind"], j["input_hash"], j["template"])] = j
+
+    def judge_one(task):
+        kind, ids, state = task
+        h = hashlib.sha256(json.dumps(state, sort_keys=True).encode()).hexdigest()[:16]
+        if (kind, h, TEMPLATE_HASH) in old:  # SLP.14: judged again only when a hash changes
+            return old[(kind, h, TEMPLATE_HASH)]
+        ps, cost, failures = {}, 0.0, 0
+        for model, runs in PANELS[kind].items():
+            ps[model] = []
+            for _ in range(runs):
+                try:
+                    p, c, _served = ask(model, kind, state)
+                    ps[model].append(p)
+                    cost += c
+                except Exception:
+                    failures += 1
+        votes = [decide(v, th[f"{kind}|{m}"]) for m, v in ps.items()]
+        decision = None if failures else (True if all(v is True for v in votes) else
+                                           False if all(v is False for v in votes) else None)
+        return {"kind": kind, "ids": list(ids), "input_hash": h, "template": TEMPLATE_HASH,
+                "panel": PANELS[kind], "ps": ps, "failures": failures, "decision": decision, "cost": cost}
+
+    with ThreadPoolExecutor(16) as pool:
+        results = list(pool.map(judge_one, tasks))
+    record.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in results))
+    for kind in ("contradiction", "redundancy"):
+        rs = [r for r in results if r["kind"] == kind]
+        print(f"{kind}\tjudged={len(rs)}\tdefect={sum(r['decision'] is True for r in rs)}"
+              f"\tclean={sum(r['decision'] is False for r in rs)}\tescalated={sum(r['decision'] is None for r in rs)}")
+        for r in rs:
+            if r["decision"] is not False:
+                print(f"  {'DEFECT' if r['decision'] else 'ESCALATE'}\t{','.join(r['ids'])}\t"
+                      + " ".join(f"{m.split('/')[1][:12]}={[round(p, 2) for p in v]}" for m, v in r["ps"].items()))
+    print(f"cost_usd\t{sum(r['cost'] for r in results):.6f}")
