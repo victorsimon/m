@@ -1,0 +1,386 @@
+{
+ "XC1": {
+  "label": "yes",
+  "why": "The issue-only slip leaves room for just one return slip among the two the library keeps."
+ },
+ "XC2": {
+  "label": "no",
+  "why": "The lead can read both calls aloud and sign before a nurse accepts either call."
+ },
+ "XC3": {
+  "label": "yes",
+  "why": "The clerk adds the entry strictly between signature and publication, exactly when the signed manifest admits no new entries."
+ },
+ "XC4": {
+  "label": "no",
+  "why": "The cook can enter the single measurement on the receiving copy and transcribe it onto the kitchen copy."
+ },
+ "XC5": {
+  "label": "no",
+  "why": "The translator can initial every proof to record a reading while the editor gives final approval."
+ },
+ "XC6": {
+  "label": "yes",
+  "why": "Sale and file exhaust run P, so no sheet from the run can be assigned to neither destination."
+ },
+ "XC7": {
+  "label": "no",
+  "why": "The second sample can be taken at minute eleven even though it is due at minute twelve."
+ },
+ "XC8": {
+  "label": "no",
+  "why": "The old address can remain legible in the move log while the destination is the only current shelf address."
+ },
+ "XC9": {
+  "label": "yes",
+  "why": "Score 17 is a numbered score issued at the start, so leaving it uncollected contradicts collecting every such score at the close."
+ },
+ "XC10": {
+  "label": "no",
+  "why": "Deleting the duplicate reduces Fern's line count without reopening the order to additions."
+ },
+ "XC11": {
+  "label": "yes",
+  "why": "If the first signal precedes the last boarding, no headcount can be taken after that boarding but before that signal."
+ },
+ "XC12": {
+  "label": "no",
+  "why": "Five cups on the upper tray and three on the lower give eight cups, the required difference of two, and a count within each tray's limits."
+ },
+ "XC13": {
+  "label": "yes",
+  "why": "Covering the conservator's blue-ink signature necessarily covers a blue mark that the no-cover clause expressly protects."
+ },
+ "XC14": {
+  "label": "no",
+  "why": "The reader can give the attendant the key for the final hour without surrendering the locker assignment."
+ },
+ "XC15": {
+  "label": "no",
+  "why": "Deducting only the one-kilogram liner gives exactly the stated difference between the gross and closing entries."
+ },
+ "XC16": {
+  "label": "yes",
+  "why": "The sixty letters and one counted space total 61 caption characters, exceeding the limit of 60 even without the inventory code."
+ },
+ "XC17": {
+  "label": "no",
+  "why": "One length can supply two distinct swatches, one per fitter, while the other four lengths supply two more swatches per fitter."
+ },
+ "XC18": {
+  "label": "no",
+  "why": "The hold removes the requirement to release Birch at the buzzer without forbidding the clerk to release it then."
+ },
+ "XC19": {
+  "label": "yes",
+  "why": "A fold made after H crosses the counter cannot supply the fold required at the instant it crosses."
+ },
+ "XC20": {
+  "label": "no",
+  "why": "Plum can be spent once at the west room while a different, unspent ticket of the same kind still permits entry to the east room."
+ },
+ "XC21": {
+  "label": "yes",
+  "why": "The loader's sole signature for Finch would have to be made both before and after loading."
+ },
+ "XC22": {
+  "label": "yes",
+  "why": "Sharing a line requires Moss and Reed to dry together, whereas Moss dries strictly before Reed."
+ },
+ "XC23": {
+  "label": "no",
+  "why": "The dresser can exit from inside without unlocking the door, and nobody needs to enter."
+ },
+ "XC24": {
+  "label": "no",
+  "why": "The studio can discard the uncut recording after seven days and retain the separately scheduled excerpt through day ten."
+ },
+ "XC25": {
+  "label": "yes",
+  "why": "The three seeds planted in East cannot count as planted in North because their later move is a transfer, not a planting."
+ },
+ "XC26": {
+  "label": "no",
+  "why": "The cashier can copy three whole-pound amounts unchanged and round their sum to the nearest pound without changing it."
+ },
+ "XC27": {
+  "label": "yes",
+  "why": "With two of the twelve bowls not intact, at most ten can count toward the quota of twelve."
+ },
+ "XC28": {
+  "label": "no",
+  "why": "Keeping both the original and corrected arrival figures alongside the departure reading gives three figures from two weighings."
+ },
+ "XC29": {
+  "label": "yes",
+  "why": "Four stalls receiving placards directly from the desk require four distinct placards because none can be issued to two stalls."
+ },
+ "XC30": {
+  "label": "no",
+  "why": "In a volume with two gatherings, checking the first and last checks every gathering."
+ },
+ "XC31": {
+  "label": "void",
+  "why": "An interval from blanking to vote closure requires closure no earlier than blanking, but a requirement not to unblank before closure is already satisfied when the talk ends."
+ },
+ "XC32": {
+  "label": "yes",
+  "why": "The same destination field cannot contain exactly one station code and two distinct station codes."
+ },
+ "XC33": {
+  "label": "no",
+  "why": "Seven nests sighted once and an eighth sighted twice give nine time entries under eight nest numbers without counting the eighth nest twice."
+ },
+ "XC34": {
+  "label": "yes",
+  "why": "The tenth singer arrives first, so immediate closure at that arrival rules out remaining open until the bell."
+ },
+ "XC35": {
+  "label": "yes",
+  "why": "The below-minimum diagonal triggers a reject mark regardless of the mean, whereas the workshop passes Dawn without that mark."
+ },
+ "XC36": {
+  "label": "no",
+  "why": "The keeper can enter the reading, send its value to the office and send the book image later in the weekly packet."
+ },
+ "XC37": {
+  "label": "no",
+  "why": "Tuesday's rehearsal neither uses up the one performance nor ends the loan, so Wednesday's performance can occur under the same loan."
+ },
+ "XC38": {
+  "label": "yes",
+  "why": "Four entries belonging to one distinct player apiece can account for only four player owners, not five."
+ },
+ "XC39": {
+  "label": "yes",
+  "why": "The recorded stirs at minutes 0, 10, 20 and 30 give four in the closed interval, not three."
+ },
+ "XC40": {
+  "label": "no",
+  "why": "The sleeve is sealed at acceptance, and opening it afterward is expressly unrestricted."
+ },
+ "XC41": {
+  "label": "no",
+  "why": "The slips are numbered 40, 41 and 42 in order, and the cancelled middle slip retains number 41 for the register."
+ },
+ "XC42": {
+  "label": "void",
+  "why": "The actual stops last six and five minutes, which conflicts if the guide is dividing elapsed time but not if the guide allotted four and five minutes beforehand."
+ },
+ "XC43": {
+  "label": "no",
+  "why": "The black and violet stamps can be applied at opposite ends with matching trip numbers because their inks need not match."
+ },
+ "XC44": {
+  "label": "no",
+  "why": "The cutter can copy the correction from one working tracing to another without altering the master."
+ },
+ "XC45": {
+  "label": "void",
+  "why": "If witness status is a condition on every actual signer, the clerk is excluded, but if it is a rule about who may sign, the clerk can sign in violation of it."
+ },
+ "XC46": {
+  "label": "no",
+  "why": "Six towels returned before noon and six returned exactly at noon give twelve by noon when noon itself is included."
+ },
+ "XC47": {
+  "label": "yes",
+  "why": "The Rivers reference counts as an entry, so Vale is entered under both Rivers and Travel rather than exactly one heading."
+ },
+ "XC48": {
+  "label": "yes",
+  "why": "Opening the envelope must precede completion of the count, which must precede posting, yet the envelope has never been opened at posting time."
+ },
+ "XR1": {
+  "label": "yes",
+  "why": "Statements 4\u20138 keep Otter's blue desk copy at the issuing desk through reconciliation and require the return clerk's signature there for completion, so the signature precedes any departure."
+ },
+ "XR2": {
+  "label": "no",
+  "why": "Statement 4 requires initialling after reading and before the sheet returns, but not immediately after each cue is read."
+ },
+ "XR3": {
+  "label": "yes",
+  "why": "Statements 1\u20133 make Ash's seal number mandatory on the outward manifest, and 5 says leaving the crate closed waives only the inside count."
+ },
+ "XR4": {
+  "label": "no",
+  "why": "Statement 4 requires recording the rejected loaf's weight, but the net-of-band rule in 6 applies to sale tickets, not to the rejected loaf's batch-card entry."
+ },
+ "XR5": {
+  "label": "no",
+  "why": "Statements 2\u20133 establish the lead's timely receipt, but 4\u20136 mention forwarding the draft and do not establish that the relief interpreter receives the final glossary before the call."
+ },
+ "XR6": {
+  "label": "yes",
+  "why": "Statements 1\u20135 establish that the incoming nurse hears the call and that it remains on the written handover sheet because it is still unaccepted at the end."
+ },
+ "XR7": {
+  "label": "yes",
+  "why": "Statements 1\u20136 account for two distinct file sheets and two distinct proof sheets with no overlap, all set aside by the printer and excluded from sale."
+ },
+ "XR8": {
+  "label": "no",
+  "why": "The short form in 2 omits the name from the wall label, but the separate approval of audio credits in 5 does not require the audio introduction to omit it."
+ },
+ "XR9": {
+  "label": "no",
+  "why": "Statements 6\u201310 preserve each line's key, description and quantity but do not require the publication copy to preserve line order."
+ },
+ "XR10": {
+  "label": "yes",
+  "why": "Under 1\u20136, a signed page and a settled list are necessary and sufficient, and Fern's empty list counts as settled and remains empty when the registrar signs."
+ },
+ "XR11": {
+  "label": "no",
+  "why": "Statements 1\u20134 put the key in a numbered envelope but place the courier's initials in the deposit book, not necessarily on the envelope."
+ },
+ "XR12": {
+  "label": "void",
+  "why": "If statement 3 counts cups on Iris, four inside leave two outside, but its wording does not explicitly establish that all four cups in the marked square are on Iris."
+ },
+ "XR13": {
+  "label": "no",
+  "why": "Statements 1\u20133 require the display warning, but 5\u20137 do not establish that the scale on the reduced copy is unchanged from the source."
+ },
+ "XR14": {
+  "label": "yes",
+  "why": "Under 1\u20135, the cutter can close the fitting only against a cleared card, which requires receiving both physical swatches back and cannot be satisfied by a photograph of a missing one."
+ },
+ "XR15": {
+  "label": "no",
+  "why": "Statement 2 distinguishes the second reader from the translator, but 4\u20135 allow additional receipt signatures without barring the second reader's."
+ },
+ "XR16": {
+  "label": "yes",
+  "why": "Statements 1\u20135 identify Orchard's sole tray time as its arrival time at the pass and place the first dish's departure from the stove strictly earlier."
+ },
+ "XR17": {
+  "label": "yes",
+  "why": "Statements 1\u20134 replace the active address with a different destination in the fetch index while preserving the departure address in the move log."
+ },
+ "XR18": {
+  "label": "no",
+  "why": "Under 2\u20134, all twelve cells must be occupied, but a cell with two seeds still counts as occupied."
+ },
+ "XR19": {
+  "label": "yes",
+  "why": "Statements 1 and 5\u20138 include both packet card types in the steward's count and route them only after counting into the cleared sleeve from which the treasurer must take them."
+ },
+ "XR20": {
+  "label": "no",
+  "why": "Statements 3\u20136 require gram rounding for the ledger, but citing its entry does not establish that the invoice calculation uses the rounded net weight."
+ },
+ "XR21": {
+  "label": "yes",
+  "why": "Statements 1\u20135 establish that the clerk opens the envelope to enter its sole slip, makes that entry before certification, and publishes only after certification."
+ },
+ "XR22": {
+  "label": "no",
+  "why": "Statements 2\u20135 guarantee collection of issued scores, but the numbered score on the spare stand is expressly unissued."
+ },
+ "XR23": {
+  "label": "yes",
+  "why": "Statements 1\u20135 give the loans distinct numbers, prevent a renewal entry from changing the other loan's date, and allow either renewal alone despite their common due time."
+ },
+ "XR24": {
+  "label": "no",
+  "why": "Statements 1\u20135 require a Teal reader to sign before admission but specify ink for the date and the clerk's strike-through, not for the reader's signature."
+ },
+ "XR25": {
+  "label": "no",
+  "why": "Statement 1 makes a mark necessary for the longer interval, but marking all four tiles in statement 3 does not guarantee that they receive it."
+ },
+ "XR26": {
+  "label": "yes",
+  "why": "Statements 1\u20132 make the clean copy the sole item sent to the client, and statements 3\u20135 exclude the reader's margin notes from that copy."
+ },
+ "XR27": {
+  "label": "yes",
+  "why": "By statements 1\u20133, the second stop lasts at most five minutes and the first is strictly shorter, so their sum is less than the ten-minute quarter."
+ },
+ "XR28": {
+  "label": "no",
+  "why": "Statements 1 and 3 establish one destination code at a time, but statements 4\u20137 do not require a replacement tag to retain the original code."
+ },
+ "XR29": {
+  "label": "no",
+  "why": "Statement 4 establishes that the reel bears its number, not that its digits are distinguishable as required by statements 1\u20132."
+ },
+ "XR30": {
+  "label": "yes",
+  "why": "Statements 2\u20137 and 10 place both cracked bowls in the inventory's second column, while statement 9 limits dispatch to first-column bowls."
+ },
+ "XR31": {
+  "label": "no",
+  "why": "Statement 3 establishes removal before release, but statements 4\u20136 specify recording the release time and the remover's name, not the removal time."
+ },
+ "XR32": {
+  "label": "yes",
+  "why": "Statements 1\u20134 restrict adhesive contact during return to the frame or panel back, neither of which is the painted front delivered to the client."
+ },
+ "XR33": {
+  "label": "no",
+  "why": "Statements 1\u20134 leave at most ninety sheets available for sale credit without establishing that all ninety are sound and credited."
+ },
+ "XR34": {
+  "label": "yes",
+  "why": "Under statements 1\u20133, the unused filing requires no marks anywhere on the paper at filing time, making both sides blank then."
+ },
+ "XR35": {
+  "label": "no",
+  "why": "Statements 2\u20136 preserve the cut number but place the old weight in a separate ledger without requiring it to remain legible on the block sheet."
+ },
+ "XR36": {
+  "label": "yes",
+  "why": "Statements 1\u20134 permit a receipt for the return half alone against the original sale number without counting it as another sale."
+ },
+ "XR37": {
+  "label": "no",
+  "why": "Statements 2\u20133 put six minutes between observations using the same lamp, but statements 4\u20137 do not impose that interval between log entries."
+ },
+ "XR38": {
+  "label": "yes",
+  "why": "Statements 1\u20134 keep the green shuttle assigned to Ash from opening through closing pick, including the intervening pause, and statement 6 rules out a transfer on the shared rest."
+ },
+ "XR39": {
+  "label": "no",
+  "why": "Statements 3\u20135 allow both copies to be destroyed after the desk receipts the original but before it files it."
+ },
+ "XR40": {
+  "label": "void",
+  "why": "Statements 1\u20132 rule out a fee for the due day, but if 'on the day' means the date of assessment, nothing rules out assessing a later day's fee then."
+ },
+ "XR41": {
+  "label": "no",
+  "why": "Statements 1, 4 and 6 require a fresh line for each sighting but do not require a fresh number for a previously recorded nest."
+ },
+ "XR42": {
+  "label": "no",
+  "why": "Statements 1\u20133 put both parts in one envelope, but statements 7\u201310 establish reading and listing order rather than physical order inside the envelope."
+ },
+ "XR43": {
+  "label": "yes",
+  "why": "Statements 1\u20134 count the fragments' single accession number once and require a distinct location entry for each fragment."
+ },
+ "XR44": {
+  "label": "no",
+  "why": "Statements 3\u20135 require an entered difference but do not rule out release on equal readings, so a strictly lower departure reading is not required."
+ },
+ "XR45": {
+  "label": "yes",
+  "why": "Statements 1\u20134 make an open loan bar another loan of the same key and distinguish physical return from closure by clearing the slip."
+ },
+ "XR46": {
+  "label": "no",
+  "why": "Statements 2\u20135 cover every spoken abbreviation but guarantee unchanged printed abbreviations only in the heading, not in the body."
+ },
+ "XR47": {
+  "label": "yes",
+  "why": "Statements 1\u20134 require a person to sign each of three boxes and forbid any person from signing two of them."
+ },
+ "XR48": {
+  "label": "no",
+  "why": "Statements 2\u20137 require separate volume entries but allow the first rinse to be discarded after the second is drawn and before the next batch begins."
+ }
+}

@@ -7,3 +7,4 @@
 - 2026-11-19 — v3: glossary and draft rewritten as structured elements; tools/measure.py computes the mechanical figures (all 0); rejected eval/ removed; vague-word and Spanish stopword lists in docs/lists/.
 - 2026-11-19 — calibration run (200 calls, 0.0035 USD): jev-1.14 passes both questions; gpt-6-luna-decisions fails both (SLP.24).
 - 2026-11-19 — calibration+validation of 6 decision models (1440 calls, 0.0153 USD). SLP.13/SLP.24 threshold definitions swapped to remove a self-contradiction (proposal).
+- 2026-11-19 — realistic calibration: items by w5 (gpt-6.2-sol), labels by w7 (4 independent agents); 6 models, 1728 calls, 0.0255 USD: no model passes SLP.24/25 on either question. judge cache now re-decides stored probabilities with current thresholds.

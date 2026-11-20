@@ -1,0 +1,74 @@
+{
+  "contradiction|google/gemini-decision-1": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.7015120697888511,
+    "tau_yes": 0.46079969131350734
+  },
+  "contradiction|liquid/d1.2-ultra": {
+    "failures": 0,
+    "passes": true,
+    "tau_no": 0.9436708107501032,
+    "tau_yes": 0.9726200300903274
+  },
+  "contradiction|microsoft/microsoft-decision-1.1": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.9112622868587037,
+    "tau_yes": 0.8570454602437791
+  },
+  "contradiction|openai/gpt-6-luna-decisions": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.97,
+    "tau_yes": 0.79
+  },
+  "contradiction|perplexity/pplx-decider-v1.2": {
+    "failures": 0,
+    "passes": true,
+    "tau_no": 0.728074208028363,
+    "tau_yes": 0.9819757579197539
+  },
+  "contradiction|typesafe/jev-1.14": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.75,
+    "tau_yes": 0.7
+  },
+  "redundancy|google/gemini-decision-1": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.9119710914699308,
+    "tau_yes": 0.5107833336314967
+  },
+  "redundancy|liquid/d1.2-ultra": {
+    "failures": 8,
+    "passes": false,
+    "tau_no": 0.952865513263794,
+    "tau_yes": 0.6373111844817966
+  },
+  "redundancy|microsoft/microsoft-decision-1.1": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.9702526093803132,
+    "tau_yes": 0.6151288759173146
+  },
+  "redundancy|openai/gpt-6-luna-decisions": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 1.0,
+    "tau_yes": 0.48
+  },
+  "redundancy|perplexity/pplx-decider-v1.2": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.9868652057729203,
+    "tau_yes": 0.711767541605631
+  },
+  "redundancy|typesafe/jev-1.14": {
+    "failures": 0,
+    "passes": false,
+    "tau_no": 0.96,
+    "tau_yes": 0.25
+  }
+}

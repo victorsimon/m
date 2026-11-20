@@ -1,0 +1,138 @@
+{
+  "contradiction|google/gemini-decision-1": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 3,
+    "wrong_ids": [
+      "XC4",
+      "XC7",
+      "XC20"
+    ]
+  },
+  "contradiction|liquid/d1.2-ultra": {
+    "deterministic": false,
+    "escalated": 1,
+    "failures": 0,
+    "passes": false,
+    "wrong": 2,
+    "wrong_ids": [
+      "XC7",
+      "XC39"
+    ]
+  },
+  "contradiction|microsoft/microsoft-decision-1.1": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 2,
+    "wrong_ids": [
+      "XC4",
+      "XC7"
+    ]
+  },
+  "contradiction|openai/gpt-6-luna-decisions": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 4,
+    "wrong_ids": [
+      "XC4",
+      "XC7",
+      "XC19",
+      "XC20"
+    ]
+  },
+  "contradiction|perplexity/pplx-decider-v1.2": {
+    "deterministic": false,
+    "escalated": 1,
+    "failures": 0,
+    "passes": false,
+    "wrong": 1,
+    "wrong_ids": [
+      "XC7"
+    ]
+  },
+  "contradiction|typesafe/jev-1.14": {
+    "deterministic": false,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 2,
+    "wrong_ids": [
+      "XC4",
+      "XC7"
+    ]
+  },
+  "redundancy|google/gemini-decision-1": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 2,
+    "wrong_ids": [
+      "XR35",
+      "XR42"
+    ]
+  },
+  "redundancy|liquid/d1.2-ultra": {
+    "deterministic": false,
+    "escalated": 0,
+    "failures": 4,
+    "passes": false,
+    "wrong": 0,
+    "wrong_ids": []
+  },
+  "redundancy|microsoft/microsoft-decision-1.1": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 2,
+    "wrong_ids": [
+      "XR8",
+      "XR38"
+    ]
+  },
+  "redundancy|openai/gpt-6-luna-decisions": {
+    "deterministic": true,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 6,
+    "wrong_ids": [
+      "XR4",
+      "XR15",
+      "XR20",
+      "XR24",
+      "XR35",
+      "XR42"
+    ]
+  },
+  "redundancy|perplexity/pplx-decider-v1.2": {
+    "deterministic": false,
+    "escalated": 0,
+    "failures": 1,
+    "passes": false,
+    "wrong": 0,
+    "wrong_ids": []
+  },
+  "redundancy|typesafe/jev-1.14": {
+    "deterministic": false,
+    "escalated": 0,
+    "failures": 0,
+    "passes": false,
+    "wrong": 6,
+    "wrong_ids": [
+      "XR15",
+      "XR20",
+      "XR35",
+      "XR39",
+      "XR42",
+      "XR46"
+    ]
+  }
+}

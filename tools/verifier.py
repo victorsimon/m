@@ -208,10 +208,12 @@ if __name__ == "__main__" and sys.argv[1:2] == ["judge"]:
     def judge_one(task):
         kind, ids, state = task
         h = hashlib.sha256(json.dumps(state, sort_keys=True).encode()).hexdigest()[:16]
-        if (kind, h, TEMPLATE_HASH) in old:  # SLP.14: judged again only when a hash changes
-            return old[(kind, h, TEMPLATE_HASH)]
-        ps, cost, failures = {}, 0.0, 0
+        cached = old.get((kind, h, TEMPLATE_HASH), {"ps": {}, "failures": 0})  # SLP.14: reuse runs per model
+        ps, cost, failures = {}, 0.0, cached["failures"]
         for model, runs in PANELS[kind].items():
+            if len(cached["ps"].get(model, [])) == runs:
+                ps[model] = cached["ps"][model]
+                continue
             ps[model] = []
             for _ in range(runs):
                 try:
