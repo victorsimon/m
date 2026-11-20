@@ -1,46 +1,651 @@
 {
-  "contradiction": [
-    {"id": "C1", "label": true, "a": "The agreement does not expire with time.", "b": "The agreement expires after 30 days."},
-    {"id": "C2", "label": true, "a": "Every task has exactly one executor.", "b": "A task may be carried out by two executors at once."},
-    {"id": "C3", "label": true, "a": "Definitions live only in the glossary.", "b": "Section 4 of the methodology defines the term Level."},
-    {"id": "C4", "label": true, "a": "Autonomy is decided for each task separately.", "b": "All tasks share the same degree of autonomy."},
-    {"id": "C5", "label": true, "a": "A verification returns a graded diagnosis, not a yes or a no.", "b": "A verification returns only pass or fail."},
-    {"id": "C6", "label": true, "a": "Intent is inherited non-strictly.", "b": "Each level inherits the intent of the level above unchanged."},
-    {"id": "C7", "label": true, "a": "Every claim needs evidence.", "b": "Claims are accepted without evidence."},
-    {"id": "C8", "label": true, "a": "Documents are written in English.", "b": "Documents are written in Spanish."},
-    {"id": "C9", "label": true, "a": "Know-how lives outside the executor.", "b": "Know-how exists only inside the executor."},
-    {"id": "C10", "label": true, "a": "An element counts in every figure it breaks.", "b": "Each element counts in exactly one figure."},
-    {"id": "N1", "label": false, "a": "The agreement does not expire with time.", "b": "The agreement is reviewed when it fails a verification."},
-    {"id": "N2", "label": false, "a": "Every task has exactly one executor.", "b": "An executor may carry out more than one task."},
-    {"id": "N3", "label": false, "a": "Definitions live only in the glossary.", "b": "The glossary is ordered so that each definition uses only earlier terms."},
-    {"id": "N4", "label": false, "a": "Autonomy is decided for each task separately.", "b": "Autonomy is bounded by the exceptions of the agreement."},
-    {"id": "N5", "label": false, "a": "A verification returns a graded diagnosis, not a yes or a no.", "b": "Severity and urgency are independent of each other."},
-    {"id": "N6", "label": false, "a": "Intent is inherited non-strictly.", "b": "Intent is set at each level."},
-    {"id": "N7", "label": false, "a": "Every claim needs evidence.", "b": "Rules do not need evidence."},
-    {"id": "N8", "label": false, "a": "Documents are written in English.", "b": "The conversation is held in Spanish."},
-    {"id": "N9", "label": false, "a": "Know-how lives outside the executor.", "b": "Know-how can be reused when the executor changes."},
-    {"id": "N10", "label": false, "a": "An element counts in every figure it breaks.", "b": "The slop of an artefact is the sum of its violations."}
-  ],
-  "redundancy": [
-    {"id": "R1", "label": true, "target": "The agreement is the first thing a working group settles.", "context": ["Before anything else, a working group settles its agreement.", "The agreement has six components."]},
-    {"id": "R2", "label": true, "target": "Every claim needs evidence.", "context": ["Claims must always be supported by evidence."]},
-    {"id": "R3", "label": true, "target": "Intent is set at each level.", "context": ["Each level has its own intent, set at that level."]},
-    {"id": "R4", "label": true, "target": "Severity and urgency are independent.", "context": ["Urgency does not depend on severity, and severity does not depend on urgency."]},
-    {"id": "R5", "label": true, "target": "Documents are written in English.", "context": ["Every document is in English."]},
-    {"id": "R6", "label": true, "target": "A task is divided into smaller tasks by decomposition.", "context": ["Decomposition is the division of a task into smaller tasks."]},
-    {"id": "R7", "label": true, "target": "Know-how can be reused when the executor changes.", "context": ["Know-how survives a change of executor and can be used again."]},
-    {"id": "R8", "label": true, "target": "The score is computed by a script the candidates cannot see.", "context": ["Candidates have no access to the scoring script, which computes the score."]},
-    {"id": "R9", "label": true, "target": "Each run returns a probability.", "context": ["Every run of the verifier yields the probability that the answer is yes."]},
-    {"id": "R10", "label": true, "target": "Ties go to the simpler candidate.", "context": ["When two candidates score the same, the one with fewer lines wins.", "A candidate with fewer lines is simpler."]},
-    {"id": "R11", "label": false, "target": "The agreement is the first thing a working group settles.", "context": ["The agreement has six components.", "The agreement is monitored."]},
-    {"id": "R12", "label": false, "target": "Every claim needs evidence.", "context": ["Rules do not need evidence."]},
-    {"id": "R13", "label": false, "target": "Intent is set at each level.", "context": ["Intent gives meaning to everything else."]},
-    {"id": "R14", "label": false, "target": "Severity and urgency are independent.", "context": ["Severity is how much harm a defect does.", "Urgency is how much time there is before a defect must be resolved."]},
-    {"id": "R15", "label": false, "target": "Documents are written in English.", "context": ["The conversation is held in Spanish."]},
-    {"id": "R16", "label": false, "target": "A task is divided into smaller tasks by decomposition.", "context": ["A task is a piece of work to be done."]},
-    {"id": "R17", "label": false, "target": "Know-how can be reused when the executor changes.", "context": ["Know-how is accumulated, reviewed and retired."]},
-    {"id": "R18", "label": false, "target": "The score is computed by a script the candidates cannot see.", "context": ["Candidates cannot read the truth."]},
-    {"id": "R19", "label": false, "target": "Each run returns a probability.", "context": ["The verifier runs five times."]},
-    {"id": "R20", "label": false, "target": "Ties go to the simpler candidate.", "context": ["A candidate with fewer lines is simpler."]}
-  ]
+ "contradiction": [
+  {
+   "id": "C1",
+   "label": true,
+   "a": "The agreement does not expire with time.",
+   "b": "The agreement expires after 30 days.",
+   "split": "cal"
+  },
+  {
+   "id": "C2",
+   "label": true,
+   "a": "Every task has exactly one executor.",
+   "b": "A task may be carried out by two executors at once.",
+   "split": "cal"
+  },
+  {
+   "id": "C3",
+   "label": true,
+   "a": "Definitions live only in the glossary.",
+   "b": "Section 4 of the methodology defines the term Level.",
+   "split": "cal"
+  },
+  {
+   "id": "C4",
+   "label": true,
+   "a": "Autonomy is decided for each task separately.",
+   "b": "All tasks share the same degree of autonomy.",
+   "split": "cal"
+  },
+  {
+   "id": "C5",
+   "label": true,
+   "a": "A verification returns a graded diagnosis, not a yes or a no.",
+   "b": "A verification returns only pass or fail.",
+   "split": "cal"
+  },
+  {
+   "id": "C6",
+   "label": true,
+   "a": "Intent is inherited non-strictly.",
+   "b": "Each level inherits the intent of the level above unchanged.",
+   "split": "cal"
+  },
+  {
+   "id": "C7",
+   "label": true,
+   "a": "Every claim needs evidence.",
+   "b": "Claims are accepted without evidence.",
+   "split": "cal"
+  },
+  {
+   "id": "C8",
+   "label": true,
+   "a": "The glossary is written only in English.",
+   "b": "The glossary is written only in Spanish.",
+   "split": "cal"
+  },
+  {
+   "id": "C9",
+   "label": true,
+   "a": "Know-how lives outside the executor.",
+   "b": "Know-how exists only inside the executor.",
+   "split": "cal"
+  },
+  {
+   "id": "C10",
+   "label": true,
+   "a": "An element counts in every figure it breaks.",
+   "b": "Each element counts in exactly one figure.",
+   "split": "cal"
+  },
+  {
+   "id": "N1",
+   "label": false,
+   "a": "The agreement does not expire with time.",
+   "b": "The agreement is reviewed when it fails a verification.",
+   "split": "cal"
+  },
+  {
+   "id": "N2",
+   "label": false,
+   "a": "Every task has exactly one executor.",
+   "b": "An executor may carry out more than one task.",
+   "split": "cal"
+  },
+  {
+   "id": "N3",
+   "label": false,
+   "a": "Definitions live only in the glossary.",
+   "b": "The glossary is ordered so that each definition uses only earlier terms.",
+   "split": "cal"
+  },
+  {
+   "id": "N4",
+   "label": false,
+   "a": "Autonomy is decided for each task separately.",
+   "b": "Autonomy is bounded by the exceptions of the agreement.",
+   "split": "cal"
+  },
+  {
+   "id": "N5",
+   "label": false,
+   "a": "A verification returns a graded diagnosis, not a yes or a no.",
+   "b": "Severity and urgency are independent of each other.",
+   "split": "cal"
+  },
+  {
+   "id": "N6",
+   "label": false,
+   "a": "Intent is inherited non-strictly.",
+   "b": "Intent is set at each level.",
+   "split": "cal"
+  },
+  {
+   "id": "N7",
+   "label": false,
+   "a": "Every claim needs evidence.",
+   "b": "Rules do not need evidence.",
+   "split": "cal"
+  },
+  {
+   "id": "N8",
+   "label": false,
+   "a": "Documents are written in English.",
+   "b": "The conversation is held in Spanish.",
+   "split": "cal"
+  },
+  {
+   "id": "N9",
+   "label": false,
+   "a": "Know-how lives outside the executor.",
+   "b": "Know-how can be reused when the executor changes.",
+   "split": "cal"
+  },
+  {
+   "id": "N10",
+   "label": false,
+   "a": "An element counts in every figure it breaks.",
+   "b": "The slop of an artefact is the sum of its violations.",
+   "split": "cal"
+  },
+  {
+   "id": "C11",
+   "label": true,
+   "a": "Each iteration bumps the draft version.",
+   "b": "Some iterations close without changing the draft version.",
+   "split": "val"
+  },
+  {
+   "id": "C12",
+   "label": true,
+   "a": "Thresholds are calibrated for each model.",
+   "b": "All models share one fixed threshold.",
+   "split": "val"
+  },
+  {
+   "id": "C13",
+   "label": true,
+   "a": "The hold-out is hidden from the candidates.",
+   "b": "The candidates read the hold-out before they are scored.",
+   "split": "val"
+  },
+  {
+   "id": "C14",
+   "label": true,
+   "a": "A definition never uses its own term.",
+   "b": "The definition of Drift uses the term Drift.",
+   "split": "val"
+  },
+  {
+   "id": "C15",
+   "label": true,
+   "a": "The verifier runs five times per pair.",
+   "b": "The verifier runs once per pair.",
+   "split": "val"
+  },
+  {
+   "id": "C16",
+   "label": true,
+   "a": "Validated content is not changed without the user's agreement.",
+   "b": "The agent changes validated content on its own.",
+   "split": "val"
+  },
+  {
+   "id": "C17",
+   "label": true,
+   "a": "Headings are not measured.",
+   "b": "Every heading is measured for vague words.",
+   "split": "val"
+  },
+  {
+   "id": "C18",
+   "label": true,
+   "a": "Every element has exactly one identifier.",
+   "b": "Some elements have two identifiers.",
+   "split": "val"
+  },
+  {
+   "id": "C19",
+   "label": true,
+   "a": "Weights are not used when counting slop.",
+   "b": "Form violations weigh twice as much as order violations.",
+   "split": "val"
+  },
+  {
+   "id": "C20",
+   "label": true,
+   "a": "The glossary is written before the methodology.",
+   "b": "The methodology is written before the glossary.",
+   "split": "val"
+  },
+  {
+   "id": "N11",
+   "label": false,
+   "a": "Each iteration bumps the draft version.",
+   "b": "Each iteration adds a line to the changelog.",
+   "split": "val"
+  },
+  {
+   "id": "N12",
+   "label": false,
+   "a": "Thresholds are calibrated for each model.",
+   "b": "A model that fails calibration is not used.",
+   "split": "val"
+  },
+  {
+   "id": "N13",
+   "label": false,
+   "a": "The hold-out is hidden from the candidates.",
+   "b": "The user can read the hold-out.",
+   "split": "val"
+  },
+  {
+   "id": "N14",
+   "label": false,
+   "a": "A definition never uses its own term.",
+   "b": "A definition may use terms defined before it.",
+   "split": "val"
+  },
+  {
+   "id": "N15",
+   "label": false,
+   "a": "The verifier runs five times per pair.",
+   "b": "Only pairs that share a term are compared.",
+   "split": "val"
+  },
+  {
+   "id": "N16",
+   "label": false,
+   "a": "Validated content is not changed without the user's agreement.",
+   "b": "Proposals are marked until the user validates them.",
+   "split": "val"
+  },
+  {
+   "id": "N17",
+   "label": false,
+   "a": "Headings are not measured.",
+   "b": "Element text is measured for vague words.",
+   "split": "val"
+  },
+  {
+   "id": "N18",
+   "label": false,
+   "a": "Every element has exactly one identifier.",
+   "b": "Two elements may derive from the same element.",
+   "split": "val"
+  },
+  {
+   "id": "N19",
+   "label": false,
+   "a": "Weights are not used when counting slop.",
+   "b": "Slop is the sum of violations over all figures.",
+   "split": "val"
+  },
+  {
+   "id": "N20",
+   "label": false,
+   "a": "The glossary is written before the methodology.",
+   "b": "The methodology uses terms from the glossary.",
+   "split": "val"
+  }
+ ],
+ "redundancy": [
+  {
+   "id": "R1",
+   "label": true,
+   "target": "The agreement is the first thing a working group settles.",
+   "context": [
+    "Before anything else, a working group settles its agreement.",
+    "The agreement has six components."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R2",
+   "label": true,
+   "target": "Every claim needs evidence.",
+   "context": [
+    "Claims must always be supported by evidence."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R3",
+   "label": true,
+   "target": "Intent is set at each level.",
+   "context": [
+    "Each level has its own intent, set at that level."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R4",
+   "label": true,
+   "target": "Severity and urgency are independent.",
+   "context": [
+    "Urgency does not depend on severity, and severity does not depend on urgency."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R5",
+   "label": true,
+   "target": "Documents are written in English.",
+   "context": [
+    "Every document is in English."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R6",
+   "label": true,
+   "target": "A task is divided into smaller tasks by decomposition.",
+   "context": [
+    "Decomposition is the division of a task into smaller tasks."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R7",
+   "label": true,
+   "target": "Know-how can be reused when the executor changes.",
+   "context": [
+    "Know-how survives a change of executor and can be used again."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R8",
+   "label": true,
+   "target": "The score is computed by a script the candidates cannot see.",
+   "context": [
+    "Candidates have no access to the scoring script, which computes the score."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R9",
+   "label": true,
+   "target": "Each run returns a probability.",
+   "context": [
+    "Every run of the verifier yields the probability that the answer is yes."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R10",
+   "label": true,
+   "target": "Ties go to the simpler candidate.",
+   "context": [
+    "When two candidates score the same, the one with fewer lines wins.",
+    "A candidate with fewer lines is simpler."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R11",
+   "label": false,
+   "target": "The agreement is the first thing a working group settles.",
+   "context": [
+    "The agreement has six components.",
+    "The agreement is monitored."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R12",
+   "label": false,
+   "target": "Every claim needs evidence.",
+   "context": [
+    "Rules do not need evidence."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R13",
+   "label": false,
+   "target": "Intent is set at each level.",
+   "context": [
+    "Intent gives meaning to everything else."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R14",
+   "label": false,
+   "target": "Severity and urgency are independent.",
+   "context": [
+    "Severity is how much harm a defect does.",
+    "Urgency is how much time there is before a defect must be resolved."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R15",
+   "label": false,
+   "target": "Documents are written in English.",
+   "context": [
+    "The conversation is held in Spanish."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R16",
+   "label": false,
+   "target": "A task is divided into smaller tasks by decomposition.",
+   "context": [
+    "A task is a piece of work to be done."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R17",
+   "label": false,
+   "target": "Know-how can be reused when the executor changes.",
+   "context": [
+    "Know-how is accumulated, reviewed and retired."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R18",
+   "label": false,
+   "target": "The score is computed by a script the candidates cannot see.",
+   "context": [
+    "Candidates cannot read the truth."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R19",
+   "label": false,
+   "target": "Each run returns a probability.",
+   "context": [
+    "The verifier runs five times."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R20",
+   "label": false,
+   "target": "Ties go to the simpler candidate.",
+   "context": [
+    "A candidate with fewer lines is simpler."
+   ],
+   "split": "cal"
+  },
+  {
+   "id": "R21",
+   "label": true,
+   "target": "Each iteration bumps the draft version.",
+   "context": [
+    "At the end of every iteration, the version number of the draft is increased."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R22",
+   "label": true,
+   "target": "A model that fails calibration is not used.",
+   "context": [
+    "Only models that pass calibration are used."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R23",
+   "label": true,
+   "target": "The hold-out is hidden from the candidates.",
+   "context": [
+    "No candidate can see the hold-out."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R24",
+   "label": true,
+   "target": "Headings are not measured.",
+   "context": [
+    "Measurement ignores headings."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R25",
+   "label": true,
+   "target": "Slop is the sum of violations over all figures.",
+   "context": [
+    "To obtain slop, add up the violations of every figure."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R26",
+   "label": true,
+   "target": "Every element has an identifier.",
+   "context": [
+    "Every element has exactly one identifier.",
+    "Identifiers are unique."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R27",
+   "label": true,
+   "target": "The user validates the calibration set.",
+   "context": [
+    "The calibration set is used only after the user has validated it."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R28",
+   "label": true,
+   "target": "Proposals are marked.",
+   "context": [
+    "Every proposal carries a proposal mark until it is validated."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R29",
+   "label": true,
+   "target": "The verifier compares pairs that share a term.",
+   "context": [
+    "Two elements are compared when they have at least one term in common."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R30",
+   "label": true,
+   "target": "Output tokens are free.",
+   "context": [
+    "Only input tokens are billed; output tokens cost nothing."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R31",
+   "label": false,
+   "target": "Each iteration bumps the draft version.",
+   "context": [
+    "Each iteration adds a line to the changelog."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R32",
+   "label": false,
+   "target": "A model that fails calibration is not used.",
+   "context": [
+    "Thresholds are calibrated for each model."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R33",
+   "label": false,
+   "target": "The hold-out is hidden from the candidates.",
+   "context": [
+    "The hold-out is a corpus."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R34",
+   "label": false,
+   "target": "Headings are not measured.",
+   "context": [
+    "Headings are labels."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R35",
+   "label": false,
+   "target": "Slop is the sum of violations over all figures.",
+   "context": [
+    "There are seven figures."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R36",
+   "label": false,
+   "target": "Every element has an identifier.",
+   "context": [
+    "Identifiers are unique."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R37",
+   "label": false,
+   "target": "The user validates the calibration set.",
+   "context": [
+    "The calibration set has forty items."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R38",
+   "label": false,
+   "target": "Proposals are marked.",
+   "context": [
+    "Proposals are validated by the user."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R39",
+   "label": false,
+   "target": "The verifier compares pairs that share a term.",
+   "context": [
+    "The verifier runs five times per pair."
+   ],
+   "split": "val"
+  },
+  {
+   "id": "R40",
+   "label": false,
+   "target": "Output tokens are free.",
+   "context": [
+    "Input tokens are billed."
+   ],
+   "split": "val"
+  }
+ ]
 }
