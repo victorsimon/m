@@ -199,14 +199,17 @@ Contradiction and redundancy become countable when [[elements]] are written as l
 [SLP.12] {kind: rule; derives: SLP.11}
 Until a logic is chosen, contradiction and redundancy are judged by a [[statistical verifier]]: a versioned yes-or-no decision question with typed criteria for yes and for no, sent through the OpenRouter Decisions API five times, three to `typesafe/jev-1.14` and two to `openai/gpt-6-luna-decisions`, both pinned. Only pairs of [[elements]] that share a [[term]] are compared.
 
-[SLP.13] {kind: rule; derives: SLP.12}
-Each run returns the probability p that the answer is yes. A pair is decided as a [[defect]] when every p is above τ_yes, as no [[defect]] when every p is below τ_no, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run.
+[SLP.13] {kind: rule; derives: SLP.12; status: proposal}
+Each run returns the probability p that the answer is yes. A pair is decided as a [[defect]] when every p is at least τ_yes, as no [[defect]] when every p is at most τ_no, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run.
 
 [SLP.23] {kind: rule; derives: SLP.13}
 τ_yes and τ_no are calibrated for each model on a labelled calibration set that the user validates, and calibrated again whenever a model changes.
 
-[SLP.24] {kind: rule; derives: SLP.23}
-For each model and each question, τ_yes is the highest p given to any item labelled no, and τ_no is the lowest p given to any item labelled yes. A model whose τ_yes is not below τ_no fails calibration for that question and is not used.
+[SLP.24] {kind: rule; derives: SLP.23; status: proposal}
+For each model and each question, τ_yes is the lowest p given to any item labelled yes, and τ_no is the highest p given to any item labelled no. A model whose τ_no is not below τ_yes fails calibration for that question and is not used.
+
+[SLP.25] {kind: rule; derives: SLP.24}
+The labelled set is split in two halves: τ_yes and τ_no are calibrated on one half and checked on the other. A model passes the check only with zero wrong decisions on the second half; escalated items are allowed, counted and published.
 
 [SLP.14] {kind: rule; derives: SLP.12}
 Each [[judgement]] is recorded with the hash of its input, the hash of the template, the models, N and k. A new [[verification]] reads the record and only judges again when a hash changes.
