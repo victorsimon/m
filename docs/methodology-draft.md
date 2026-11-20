@@ -197,15 +197,15 @@ Counting is pure: an [[element]] counts in every [[figure]] it breaks. The [[slo
 Contradiction and redundancy become countable when [[elements]] are written as logical formulas: a contradiction is a minimal unsatisfiable subset, and an [[element]] is redundant when the rest entails it. The [[judgement]] moves from [[verification]] to formalisation, where it is made once and recorded. The logic must be decidable; description logics are the candidate.
 
 [SLP.12] {kind: rule; derives: SLP.11}
-Until a logic is chosen, contradiction and redundancy are judged by a [[statistical verifier]]: a versioned yes-or-no decision question with typed criteria for yes and for no, sent through the OpenRouter Decisions API five times, three to `typesafe/jev-1.14` and two to `openai/gpt-6-luna-decisions`, both pinned. Only pairs of [[elements]] that share a [[term]] are compared.
+Until a logic is chosen, contradiction and redundancy are judged by a [[statistical verifier]]: a versioned yes-or-no decision question with typed criteria for yes and for no, sent through the OpenRouter Decisions API to a panel of pinned decision models. For contradiction the panel is `microsoft/microsoft-decision-1.1` and `google/gemini-decision-1`; for redundancy it is `microsoft/microsoft-decision-1.1`, `perplexity/pplx-decider-v1.2` and `typesafe/jev-1.14`. A model whose output repeats exactly is run once; any other model is run three times. Only pairs of [[elements]] that share a [[term]] are compared.
 
-[SLP.13] {kind: rule; derives: SLP.12; status: proposal}
-Each run returns the probability p that the answer is yes. A pair is decided as a [[defect]] when every p is at least τ_yes, as no [[defect]] when every p is at most τ_no, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run.
+[SLP.13] {kind: rule; derives: SLP.12}
+Each run returns the probability p that the answer is yes. A pair is decided as a [[defect]] when every p of every run of every panel model is at least the τ_yes of that model, as no [[defect]] when every such p is at most the τ_no of that model, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run.
 
 [SLP.23] {kind: rule; derives: SLP.13}
 τ_yes and τ_no are calibrated for each model on a labelled calibration set that the user validates, and calibrated again whenever a model changes.
 
-[SLP.24] {kind: rule; derives: SLP.23; status: proposal}
+[SLP.24] {kind: rule; derives: SLP.23}
 For each model and each question, τ_yes is the lowest p given to any item labelled yes, and τ_no is the highest p given to any item labelled no. A model whose τ_no is not below τ_yes fails calibration for that question and is not used.
 
 [SLP.25] {kind: rule; derives: SLP.24}

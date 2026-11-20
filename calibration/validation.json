@@ -11,15 +11,13 @@
     "deterministic": true,
     "escalated": 0,
     "failures": 0,
-    "passes": false,
-    "wrong": 1,
-    "wrong_ids": [
-      "C19"
-    ]
+    "passes": true,
+    "wrong": 0,
+    "wrong_ids": []
   },
   "contradiction|microsoft/microsoft-decision-1.1": {
     "deterministic": true,
-    "escalated": 1,
+    "escalated": 0,
     "failures": 0,
     "passes": true,
     "wrong": 0,
@@ -44,36 +42,31 @@
     "deterministic": false,
     "escalated": 0,
     "failures": 0,
-    "passes": false,
-    "wrong": 1,
-    "wrong_ids": [
-      "C19"
-    ]
+    "passes": true,
+    "wrong": 0,
+    "wrong_ids": []
   },
   "contradiction|typesafe/jev-1.14": {
     "deterministic": false,
     "escalated": 0,
     "failures": 0,
     "passes": false,
-    "wrong": 2,
+    "wrong": 1,
     "wrong_ids": [
-      "C13",
-      "C19"
+      "C13"
     ]
   },
   "redundancy|google/gemini-decision-1": {
     "deterministic": true,
     "escalated": 2,
     "failures": 0,
-    "passes": false,
-    "wrong": 1,
-    "wrong_ids": [
-      "R27"
-    ]
+    "passes": true,
+    "wrong": 0,
+    "wrong_ids": []
   },
   "redundancy|liquid/d1.2-ultra": {
     "deterministic": true,
-    "escalated": 2,
+    "escalated": 1,
     "failures": 0,
     "passes": false,
     "wrong": 1,
@@ -83,7 +76,7 @@
   },
   "redundancy|microsoft/microsoft-decision-1.1": {
     "deterministic": true,
-    "escalated": 5,
+    "escalated": 4,
     "failures": 0,
     "passes": true,
     "wrong": 0,
@@ -94,10 +87,9 @@
     "escalated": 0,
     "failures": 0,
     "passes": false,
-    "wrong": 4,
+    "wrong": 3,
     "wrong_ids": [
       "R23",
-      "R27",
       "R28",
       "R30"
     ]
@@ -112,7 +104,7 @@
   },
   "redundancy|typesafe/jev-1.14": {
     "deterministic": false,
-    "escalated": 3,
+    "escalated": 2,
     "failures": 0,
     "passes": true,
     "wrong": 0,

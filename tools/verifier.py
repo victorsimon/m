@@ -2,6 +2,7 @@
 """Statistical verifier client (methodology SLP.12-SLP.14). Needs OPENROUTER_API_KEY.
 
 Usage: tools/verifier.py pilot CALIBRATION_JSON N   -> runs the first N items once per model, prints p and cost
+       tools/verifier.py check CALIBRATION_JSON OUT_DIR -> recompute thresholds and validation from results.jsonl
        tools/verifier.py calibrate CALIBRATION_JSON OUT_DIR MODELS RUNS -> calibrate on split cal, check on split val
 """
 import hashlib
@@ -54,6 +55,8 @@ def thresholds(rows):
     """SLP.24: per (question, model), tau_yes = min p over 'yes' items, tau_no = max p over 'no' items."""
     out = {}
     for r in rows:
+        if r.get("void"):
+            continue
         t = out.setdefault(f"{r['kind']}|{r['model']}", {"tau_yes": 1.0, "tau_no": 0.0, "failures": 0})
         if r["p"] is None:
             t["failures"] += 1
@@ -79,6 +82,8 @@ def validate(rows, th):
     """SLP.25: per (question, model), count wrong and escalated decisions per item over its runs."""
     items = {}
     for r in rows:
+        if r.get("void"):
+            continue
         items.setdefault((f"{r['kind']}|{r['model']}", r["id"], r["label"]), []).append(r["p"])
     out = {}
     for (key, _id, label), ps in items.items():
@@ -115,6 +120,21 @@ if __name__ == "__main__" and sys.argv[1:2] == ["pilot"]:
                 total += cost
                 print(f"{kind}\t{item['id']}\t{item['label']}\t{model}\t{served}\tp={p:.3f}\tcost={cost:.8f}")
     print(f"total_cost_usd\t{total:.8f}")
+
+if __name__ == "__main__" and sys.argv[1:2] == ["check"]:
+    from pathlib import Path
+    cal, out = json.load(open(sys.argv[2])), Path(sys.argv[3])
+    void = {i["id"] for k in cal for i in cal[k] if i.get("void")}
+    rows = [dict(json.loads(line), void=False) for line in (out / "results.jsonl").read_text().splitlines()]
+    for r in rows:
+        r["void"] = r["id"] in void
+    th = thresholds([r for r in rows if r["split"] == "cal"])
+    val = validate([r for r in rows if r["split"] == "val"], th)
+    (out / "thresholds.json").write_text(json.dumps(th, indent=2, sort_keys=True) + "\n")
+    (out / "validation.json").write_text(json.dumps(val, indent=2, sort_keys=True) + "\n")
+    for key in sorted(th):
+        print(f"{key}\tcal={'pass' if th[key]['passes'] else 'FAIL'}\tval={'pass' if val[key]['passes'] else 'FAIL'}"
+              f"\twrong={val[key]['wrong_ids']}\tescalated={val[key]['escalated']}")
 
 if __name__ == "__main__" and sys.argv[1:2] == ["calibrate"]:
     from concurrent.futures import ThreadPoolExecutor

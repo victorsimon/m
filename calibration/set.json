@@ -201,7 +201,8 @@
    "label": true,
    "a": "Weights are not used when counting slop.",
    "b": "Form violations weigh twice as much as order violations.",
-   "split": "val"
+   "split": "val",
+   "void": "annulled by the user: the label depends on missing context (see CHANGELOG)"
   },
   {
    "id": "C20",
@@ -528,7 +529,8 @@
    "context": [
     "The calibration set is used only after the user has validated it."
    ],
-   "split": "val"
+   "split": "val",
+   "void": "annulled by the user: the label depends on missing context (see CHANGELOG)"
   },
   {
    "id": "R28",
