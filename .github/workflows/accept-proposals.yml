@@ -1,0 +1,39 @@
+name: Accept merged proposals
+
+on:
+  pull_request_target:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  accept:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      # Only run code already accepted by a merge, never the unmerged fork head.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+      - name: Remove accepted proposal markers and check the result
+        run: |
+          python3 tools/accept_proposals.py
+          python3 -m unittest discover -s tests
+          python3 tools/measure.py docs/glossary.md docs/methodology-draft.md
+      - name: Commit acceptance
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          git add -- docs/glossary.md docs/methodology-draft.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Accept proposals merged in PR #${PR_NUMBER}"
+          # Fail rather than overwrite changes if main advanced after this merge.
+          git push origin HEAD:refs/heads/main
