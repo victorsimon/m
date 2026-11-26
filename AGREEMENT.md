@@ -13,3 +13,4 @@ Base agreement for developing the methodology in `docs/methodology-draft.md`. It
 
 ## History
 - 2026-11-18: agreement validated by the user.
+- 2026-11-25: the user delegated decisions to the agent until the conditions for the first iteration hold ("toma tú las decisiones necesarias o lanza un agente con contexto limpio que decida"). Draft changes made under the delegation are marked `status: proposal` and await the user's validation.

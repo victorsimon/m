@@ -1,0 +1,1 @@
+Paid OpenRouter calls in this repo: OPENROUTER_API_KEY is not exported in the shell; pass it inline with OPENROUTER_API_KEY=$(pi auth print-api-key --provider openrouter). Z3 is not installed system-wide; it was unpacked from the z3-solver 4.13.3.0 wheel under /tmp/m-z3 (not durable).

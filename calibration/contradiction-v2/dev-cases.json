@@ -1,0 +1,12 @@
+[
+ {
+  "id": "XC1",
+  "a": "The library keeps exactly two slips for loan Lark. One records the issue and the other records the return; neither serves both purposes.",
+  "b": "Loan Lark has two return slips on file. Both count toward the number of slips the library keeps for that loan."
+ },
+ {
+  "id": "XC2",
+  "a": "The shift lead reads the outstanding calls aloud before signing the ward handover. A call remains outstanding until a nurse accepts it.",
+  "b": "For the noon ward handover, the lead signs while two of the calls she has read aloud are still outstanding."
+ }
+]

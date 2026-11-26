@@ -164,7 +164,7 @@ def main(paths):
         print(f"{fig}\t{where}\t{detail}")
     totals = {f: sum(1 for v in V if v[0] == f) for f in FIGURES}
     print("totals\t" + "  ".join(f"{f}={n}" for f, n in totals.items()) + f"  slop={len(V)}")
-    print("note\tcontradiction (fit MUS) and redundancy (economy) are not computed: statistical verifier pending")
+    print("note\tcontradiction (fit MUS) and redundancy (economy) are not computed here: tools/contradiction.py judge (SLP.26), tools/verifier.py judge (SLP.12)")
     return 1 if V else 0
 
 
