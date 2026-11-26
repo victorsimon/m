@@ -123,7 +123,7 @@ How much time there is before a [[defect]] must be resolved.
 [GLO.41] {kind: definition; defines: Tolerability; variants: tolerability, tolerable}
 Whether a [[defect]] can be lived with, classified from its measurement against a threshold.
 
-[GLO.42] {kind: definition; defines: Location; variants: location; status: proposal}
+[GLO.42] {kind: definition; defines: Location; variants: location}
 Where a [[defect]] lies: in the [[task]], the [[capability]], the [[quality]], the [[agreement]] or the [[intent]].
 
 [GLO.43] {kind: definition; defines: Diagnosis; variants: diagnosis}

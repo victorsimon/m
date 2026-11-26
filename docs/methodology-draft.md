@@ -1,4 +1,4 @@
-# Task-resolution methodology — v5 (status: proposal)
+# Task-resolution methodology — v5
 
 ## 0. Purpose
 
@@ -169,7 +169,7 @@ Text between backticks is a literal and is not checked for unmarked variants.
 [SLP.8] {kind: rule; derives: SLP.7}
 Definitions live only in the [[glossary]]; each one uses only [[terms]] defined before it, and never its own [[term]].
 
-[SLP.9] {kind: rule; derives: SLP.3; status: proposal}
+[SLP.9] {kind: rule; derives: SLP.3}
 | [[figure]] | Violation |
 |---|---|
 | [[form]] | a malformed [[element]] header; a duplicate identifier; an invalid kind; a missing required key; text outside [[elements]] and headings; an unmarked occurrence of a declared variant; three or more words from the Spanish stopword list in one [[element]]; a definition that uses its own [[term]] |
@@ -189,7 +189,7 @@ Contradiction and redundancy become countable when [[elements]] are written as l
 [SLP.12] {kind: rule; derives: SLP.11}
 Until a logic is chosen, redundancy is judged by a [[statistical verifier]]. Its decision question is versioned, asks for yes or no, and has typed criteria for yes and for no. The question is sent through the OpenRouter Decisions API to a panel of pinned decision models: `google/gemini-decision-1` and `perplexity/pplx-decider-v1.2`. A model whose output repeats exactly is run once; any other model is run three times. Each [[element]] is compared with the [[elements]] that share a [[term]] with it.
 
-[SLP.13] {kind: rule; derives: SLP.12; status: proposal}
+[SLP.13] {kind: rule; derives: SLP.12}
 Until a logic is chosen, each run of the redundancy panel returns the probability p that the answer is yes, and is decided under SLP.24. An [[element]] is decided as redundant when every run of every panel model is decided yes, as not redundant when every such run is decided no, and is escalated to the user otherwise. Each [[element]] is judged independently against its unchanged context under SLP.12. The [[economy]] count is the number decided as redundant, not the number that can be removed together. A request that fails the schema counts as a failure, not as a run. A missing run leaves the [[verification]] incomplete.
 
 [SLP.23] {kind: rule; derives: SLP.13}
