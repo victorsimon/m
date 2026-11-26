@@ -8,12 +8,9 @@ State: draft v4 passes every verification defined so far, and a second run gives
 Paid checks need `OPENROUTER_API_KEY=$(pi auth print-api-key --provider openrouter)`.
 
 Pending user decisions:
-1. Validate the changes made under delegation (every element with `status: proposal` added or changed on 2026-11-25; see CHANGELOG). The SLP.3 table lost its third column, a stronger step than the validated alignment with SLP.9.
-2. Removed or merged elements: COM.1 (into STR.2 and COM.4), INT.1 and INT.3 (into INT.2), SLP.2 (into SLP.3).
-3. Agent override recorded in judgements/redundancy-decisions.jsonl (SLP.2, now lapsed with its removal): confirm whether agent decisions should keep that power.
+1. Proposals that predate the 2026-11-25 delegation and were not reviewed in it: COM.7, OPN.2, SLP.11, SLP.16, SLP.19, SLP.20, SLP.22, SLP.9, TSK.5. SLP.9, SLP.11 and SLP.19 were edited under the delegation.
 
 Also open:
-- Whether and how to count "a task without verification", removed from SLP.3 because SLP.9 never counts it.
 - SLP.13 judges redundancy element by element; SLP.9 counts economy as |Σ'| minus the smallest equivalent subset. They differ when two elements are redundant with each other.
 - Evidence is small: 8 reserved contradiction cases, one run each, without definitions (SLP.27); delegate calibrated in-sample (SLP.29). The C05 label is debatable.
 - The contradiction judge varied between compatible and refer in 4 of 27 repeated pairs; the three-run unanimity rule mitigates it but does not remove it.

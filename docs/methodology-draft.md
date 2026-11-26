@@ -19,7 +19,7 @@ The methodology has five parts: [[intent]] above, [[communication]] beneath, and
 [STR.2] {kind: rule; derives: STR.1}
 [[communication]] is the substrate: everything else is built on the [[agreement]].
 
-[STR.3] {kind: rule; derives: STR.1; status: proposal}
+[STR.3] {kind: rule; derives: STR.1}
 [[intent]] takes priority over everything else in the work and gives everything else its meaning.
 
 [STR.4] {kind: rule; derives: STR.1}
@@ -27,13 +27,13 @@ The methodology has five parts: [[intent]] above, [[communication]] beneath, and
 
 ## 2. Communication
 
-[COM.2] {kind: rule; derives: STR.2; status: proposal}
+[COM.2] {kind: rule; derives: STR.2}
 The [[agreement]] is the first thing a [[working group]] settles when it forms.
 
 [COM.3] {kind: rule; derives: COM.2}
 The [[agreement]] has six components: [[language]], [[channels]], [[format]], [[moments]], [[commitments]] and [[exceptions]].
 
-[COM.4] {kind: rule; derives: STR.2; status: proposal}
+[COM.4] {kind: rule; derives: STR.2}
 Every relation of the methodology is [[communication]]:
 
 | Relation | As [[communication]] |
@@ -55,13 +55,13 @@ Properties of a [[communication]]: fidelity, shared [[language]], direction, tim
 
 ## 3. Intent
 
-[INT.2] {kind: rule; derives: STR.3; status: proposal}
+[INT.2] {kind: rule; derives: STR.3}
 [[intent]] is set at each [[level]] and [[distilled]] from the [[level]] above. It is inherited non-strictly: the [[intent]] of each [[level]] complements the [[intent]] of the [[level]] above so as to fulfil it.
 
 [INT.4] {kind: rule; derives: INT.2}
 [[verification]] checks that a result fulfils the [[intent]] of its [[level]] and that this [[intent]] still serves the [[intent]] of the [[level]] above.
 
-[INT.5] {kind: rule; derives: INT.2; status: proposal}
+[INT.5] {kind: rule; derives: INT.2}
 [[drift]] can empty the original [[intent]] of meaning.
 
 ## 4. Tasks
@@ -92,7 +92,7 @@ Managing [[tasks]] covers execution, [[verification]] and measurement.
 [CAP.2] {kind: rule; derives: CAP.1}
 Intrinsic [[capability]] comprises [[power]], [[speed]] and [[context management]].
 
-[CAP.3] {kind: rule; derives: CAP.1; status: proposal}
+[CAP.3] {kind: rule; derives: CAP.1}
 Extrinsic [[capability]] is the [[capability]] that [[know-how]] other than normative [[know-how]] provides. Analogy: a person is the model; documents and courses are that [[know-how]], and they belong to the organisation.
 
 [CAP.4] {kind: rule; derives: CAP.3}
@@ -138,7 +138,7 @@ What is [[tolerable]] within the [[agreement]] is resolved at its own [[level]];
 [SLP.1] {kind: rule; derives: INTENT}
 Something [[impeccable]] is beautiful; [[slop]] introduces ugliness. Images: a line that breaks the metre of a poem; a puzzle piece forced into a place it does not belong.
 
-[SLP.3] {kind: rule; derives: SLP.1; status: proposal}
+[SLP.3] {kind: rule; derives: SLP.1}
 The [[figures]] are the seven in this table, each with its image:
 
 | [[figure]] | Image |
@@ -151,7 +151,7 @@ The [[figures]] are the seven in this table, each with its image:
 | [[sharpness]] | the blurred piece |
 | [[truthfulness]] | the trompe-l'oeil |
 
-[SLP.4] {kind: rule; derives: SLP.3; status: proposal}
+[SLP.4] {kind: rule; derives: SLP.3}
 An [[artefact]] consists of headings and [[elements]]. Headings are labels and are not measured; any other text is [[slop]] of [[form]].
 
 [SLP.5] {kind: rule; derives: SLP.4}
@@ -186,10 +186,10 @@ Counting is pure: an [[element]] counts in every [[figure]] it breaks. The [[slo
 [SLP.11] {kind: rule; derives: SLP.9; status: proposal}
 Contradiction and redundancy become countable when [[elements]] are written as logical formulas: a contradiction is a minimal unsatisfiable subset, and an [[element]] is redundant when the rest entails it. Once a logic is chosen, the [[judgement]] moves from [[verification]] to formalisation, where it is made when an [[element]] is formalised, recorded, and made again only when that [[element]] or a definition it uses changes. The logic must be decidable; description logics are the candidate.
 
-[SLP.12] {kind: rule; derives: SLP.11; status: proposal}
+[SLP.12] {kind: rule; derives: SLP.11}
 Until a logic is chosen, redundancy is judged by a [[statistical verifier]]. Its decision question is versioned, asks for yes or no, and has typed criteria for yes and for no. The question is sent through the OpenRouter Decisions API to a panel of pinned decision models: `google/gemini-decision-1` and `perplexity/pplx-decider-v1.2`. A model whose output repeats exactly is run once; any other model is run three times. Each [[element]] is compared with the [[elements]] that share a [[term]] with it.
 
-[SLP.13] {kind: rule; derives: SLP.12; status: proposal}
+[SLP.13] {kind: rule; derives: SLP.12}
 Until a logic is chosen, each run of the redundancy panel returns the probability p that the answer is yes, and is decided under SLP.24. An [[element]] is decided as redundant when every run of every panel model is decided yes, as not redundant when every such run is decided no, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run. A missing run leaves the [[verification]] incomplete.
 
 [SLP.23] {kind: rule; derives: SLP.13}
@@ -201,19 +201,19 @@ For each model and each question, τ_yes is the lowest p given to any item label
 [SLP.25] {kind: rule; derives: SLP.24}
 The labelled set is split in two halves: τ_yes and τ_no are calibrated on one half and checked on the other. A model passes the check only with zero wrong decisions on the second half; escalated items are allowed, counted and published.
 
-[SLP.26] {kind: rule; derives: SLP.11; status: proposal}
+[SLP.26] {kind: rule; derives: SLP.11}
 Until a logic is chosen, contradiction is judged by the chat model `anthropic/claude-opus-5.5` at temperature 0, with the template `calibration/contradiction-v2/text.txt` identified by its SHA-256 hash. Each pair of [[elements]] that share a [[term]] is sent alone, together with the [[glossary]] definitions of the [[terms]] that either [[element]] uses. The reply is one of: contradiction, naming the requirements that cannot hold together; compatible, with an example that satisfies both [[elements]]; or refer. Each pair is judged three times; it is decided as contradiction or compatible only when the three replies agree, and is escalated to the user otherwise. A reply that fails the schema, or a transport failure, leaves the [[verification]] incomplete; neither counts as a decision.
 
-[SLP.27] {kind: claim; derives: SLP.26; evidence: calibration/contradiction-v2/heldout-run.jsonl, calibration/contradiction-v2/heldout-run-c03-c08.jsonl, labels in ../m-contradiction-reference/labels.json; status: proposal}
+[SLP.27] {kind: claim; derives: SLP.26; evidence: calibration/contradiction-v2/heldout-run.jsonl, calibration/contradiction-v2/heldout-run-c03-c08.jsonl, labels in ../m-contradiction-reference/labels.json}
 On the reserved cases C01–C08, with one run per case and without definitions, the chat model decided eight of eight correctly. The formal route checked by Z3 decided seven correctly and referred one, C05, whose label is debatable. Neither made a wrong decision.
 
-[SLP.28] {kind: rule; derives: SLP.13; status: proposal}
+[SLP.28] {kind: rule; derives: SLP.13}
 When the user delegates escalated redundancy decisions, each escalated [[element]] is sent three times, with the same target and context and without definitions, to the chat model `anthropic/claude-opus-5.5` at temperature 0 with the template `calibration/redundancy-delegate-v1/text.txt` identified by its SHA-256 hash. Three agreeing not-redundant replies decide it as not redundant. A redundant decision also needs confirmation by the user or by the agent that conducts the work under the user's delegation; any other outcome stays escalated.
 
 [SLP.29] {kind: claim; derives: SLP.28; evidence: calibration/redundancy-delegate-v1/calibration.jsonl}
 On the 46 labelled redundancy items, with the user's labels for XR17 and XR38, all 23 of the delegate's not-redundant decisions were correct. Of its 21 redundant decisions, two were wrong (XR17 and XR38); it referred two items. These items are the calibration set itself, not a held-out half.
 
-[SLP.14] {kind: rule; derives: SLP.12, SLP.26, SLP.28; status: proposal}
+[SLP.14] {kind: rule; derives: SLP.12, SLP.26, SLP.28}
 Until a logic is chosen, each [[judgement]] of the [[statistical verifier]], of the chat model of SLP.26 and of the delegate of SLP.28 is recorded with the hash of its input, the hash of the template, the models and the number of runs. A new [[verification]] reads the record and only judges again when a hash changes.
 
 [SLP.15] {kind: rule; derives: SLP.12}
