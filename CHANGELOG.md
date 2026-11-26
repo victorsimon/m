@@ -1,5 +1,9 @@
 # Changelog
 
+- 2026-11-26 — automation: merging a PR into `main` accepts proposals; a GitHub Actions workflow removes draft/glossary proposal markers in a checked follow-up commit. Historical records remain unchanged; local tests cover cleanup and idempotence. No draft-content or version change.
+
+- 2026-11-26 — v5 (status: proposal): economy counts independently redundant elements, not minimum simultaneous removals (SLP.9/SLP.13); the verifier reports this count explicitly and a CLI regression counts two mutually redundant elements as two. Clean-context agent recommendation adopted and independent diff review completed. Baseline: mechanical slop 0, 346 compatible pairs, 57 clean elements, 21 tests; closure: mechanical slop 0, 347 compatible pairs, 57 clean elements (27 by delegate), 22 tests, repeated with identical verification results. SLP.9/SLP.13 and the version label await user validation.
+
 - 2026-11-18 — v0: initial draft; project created; communication agreement validated.
 - 2026-11-19 — v1: intent established (.hermes/intent/project.md); slop figures validated; measurement, tooling and evaluation plan added.
 - 2026-11-19 — v2: glossary; fixed evaluator (eval/: clean and seeded corpus of section 2, truth, vague-word list, counting conventions); hold-out corpus kept outside the repository.

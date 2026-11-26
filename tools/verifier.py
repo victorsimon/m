@@ -161,7 +161,7 @@ def definitions(glossary, terms):
 
 
 def redundancy_tasks(glossary, doc):
-    """SLP.12: one task per element that shares a term with another; context = those other elements."""
+    """SLP.12-13: judge each element against its unchanged term-sharing context, without removing other targets."""
     els = elements(glossary, doc)
     tasks = []
     for e in els:
@@ -306,7 +306,8 @@ if __name__ == "__main__" and sys.argv[1:2] == ["judge"]:
     record.write_text("".join(json.dumps(r, sort_keys=True) + "\n" for r in results))
     for kind in ("redundancy",):
         rs = [r for r in results if r["kind"] == kind]
-        print(f"{kind}\tjudged={len(rs)}\tdefect={sum(r['decision'] is True for r in rs)}"
+        economy = sum(r["decision"] is True for r in rs)  # SLP.9/13: count elements, not simultaneous removals.
+        print(f"{kind}\tjudged={len(rs)}\tdefect={economy}\teconomy={economy}"
               f"\tclean={sum(r['decision'] is False for r in rs)}"
               f"\tescalated={sum(r['complete'] and r['decision'] is None for r in rs)}\tincomplete={sum(not r['complete'] for r in rs)}"
               f"\tdelegated={sum(r['delegated'] for r in rs)}")

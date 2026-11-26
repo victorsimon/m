@@ -1,4 +1,4 @@
-# Task-resolution methodology
+# Task-resolution methodology — v5 (status: proposal)
 
 ## 0. Purpose
 
@@ -169,12 +169,12 @@ Text between backticks is a literal and is not checked for unmarked variants.
 [SLP.8] {kind: rule; derives: SLP.7}
 Definitions live only in the [[glossary]]; each one uses only [[terms]] defined before it, and never its own [[term]].
 
-[SLP.9] {kind: rule; derives: SLP.3}
+[SLP.9] {kind: rule; derives: SLP.3; status: proposal}
 | [[figure]] | Violation |
 |---|---|
 | [[form]] | a malformed [[element]] header; a duplicate identifier; an invalid kind; a missing required key; text outside [[elements]] and headings; an unmarked occurrence of a declared variant; three or more words from the Spanish stopword list in one [[element]]; a definition that uses its own [[term]] |
 | [[fit]] | an [[element]] whose chain of derivation does not reach `INTENT` or `AGREEMENT` (a definition is traceable when its [[term]] is used by a traceable [[element]]); each minimal unsatisfiable subset of [[elements]] |
-| [[economy]] | the size of Σ' minus the size of the smallest subset equivalent to Σ', where Σ' excludes the [[elements]] of every minimal unsatisfiable subset |
+| [[economy]] | the number of [[elements]] e in Σ' such that Σ' without e entails e, where Σ' excludes the [[elements]] of every minimal unsatisfiable subset |
 | [[completeness]] | each distinct marked [[term]] that no definition declares |
 | [[order]] | each pair of an [[element]] and a [[term]] it uses before the definition of that [[term]] in the same [[artefact]] |
 | [[sharpness]] | each [[term]] with more than one definition; each variant declared by more than one [[term]]; each occurrence of an entry of the vague-word list, matched case-insensitively at word boundaries, longest entry first, without overlaps |
@@ -189,8 +189,8 @@ Contradiction and redundancy become countable when [[elements]] are written as l
 [SLP.12] {kind: rule; derives: SLP.11}
 Until a logic is chosen, redundancy is judged by a [[statistical verifier]]. Its decision question is versioned, asks for yes or no, and has typed criteria for yes and for no. The question is sent through the OpenRouter Decisions API to a panel of pinned decision models: `google/gemini-decision-1` and `perplexity/pplx-decider-v1.2`. A model whose output repeats exactly is run once; any other model is run three times. Each [[element]] is compared with the [[elements]] that share a [[term]] with it.
 
-[SLP.13] {kind: rule; derives: SLP.12}
-Until a logic is chosen, each run of the redundancy panel returns the probability p that the answer is yes, and is decided under SLP.24. An [[element]] is decided as redundant when every run of every panel model is decided yes, as not redundant when every such run is decided no, and is escalated to the user otherwise. A request that fails the schema counts as a failure, not as a run. A missing run leaves the [[verification]] incomplete.
+[SLP.13] {kind: rule; derives: SLP.12; status: proposal}
+Until a logic is chosen, each run of the redundancy panel returns the probability p that the answer is yes, and is decided under SLP.24. An [[element]] is decided as redundant when every run of every panel model is decided yes, as not redundant when every such run is decided no, and is escalated to the user otherwise. Each [[element]] is judged independently against its unchanged context under SLP.12. The [[economy]] count is the number decided as redundant, not the number that can be removed together. A request that fails the schema counts as a failure, not as a run. A missing run leaves the [[verification]] incomplete.
 
 [SLP.23] {kind: rule; derives: SLP.13}
 τ_yes and τ_no are calibrated for each model on a labelled calibration set that the user validates, and calibrated again whenever a model changes.

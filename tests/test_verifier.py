@@ -1,4 +1,7 @@
+import json
+import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -43,6 +46,33 @@ class ThresholdTest(unittest.TestCase):
         rows = [dict(row(True, 0.9), id="a"), dict(row(True, 0.1), id="b"), dict(row(False, 0.5), id="c"), dict(row(False, 0.31), id="d")]
         v = validate(rows, th)["k|m"]
         self.assertEqual((v["wrong"], v["wrong_ids"], v["escalated"], v["passes"]), (1, ["b"], 2, False))
+
+
+class RedundancyTest(unittest.TestCase):
+    def test_mutually_redundant_elements_count_twice(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            glossary, doc, th, record = (root / name for name in ("glossary.md", "doc.md", "thresholds.json", "record.jsonl"))
+            glossary.write_text("[GLO.1] {kind: definition; defines: Task; variants: task}\nA unit of work.\n")
+            text = "Every [[task]] has an owner.\n"
+            doc.write_text("[TSK.1] {kind: rule; derives: INTENT}\n" + text
+                           + "[TSK.2] {kind: rule; derives: INTENT}\n" + text)
+            tasks = verifier.redundancy_tasks(glossary, doc)
+            self.assertEqual([t[1] for t in tasks], [("TSK.1",), ("TSK.2",)])
+            plain = "Every task has an owner."
+            self.assertEqual([t[2] for t in tasks], [{"target": plain, "context": [plain]}] * 2)
+            # Recorded unanimous yes votes exercise the real CLI without model calls.
+            ps = {model: [1.0] * runs for model, runs in verifier.PANELS["redundancy"].items()}
+            th.write_text(json.dumps({f"redundancy|{model}": {"tau_yes": 0.8, "tau_no": 0.2} for model in ps}))
+            record.write_text(json.dumps({"kind": "redundancy", "input_hash": verifier.input_hash(tasks[0][2]),
+                                          "template": verifier.TEMPLATE_HASH, "ps": ps}) + "\n")
+            result = subprocess.run([sys.executable, str(Path(verifier.__file__)), "judge",
+                                     str(glossary), str(doc), str(th), str(record)], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+            self.assertIn("judged=2\tdefect=2\teconomy=2\tclean=0\tescalated=0\tincomplete=0", result.stdout)
+            decisions = [json.loads(line) for line in record.read_text().splitlines()]
+            self.assertEqual([r["ids"] for r in decisions], [["TSK.1"], ["TSK.2"]])
+            self.assertTrue(all(r["decision"] is True for r in decisions))
 
 
 def http(code, retry_after=None):
