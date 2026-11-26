@@ -50,7 +50,7 @@ The [[agreement]] is [[monitored]] and [[verified]] like any other [[artefact]].
 [COM.6] {kind: rule; derives: COM.5}
 When the [[agreement]] fails a [[verification]], it is [[reviewed]]; when the [[review]] finds a [[defect]], the [[agreement]] is updated.
 
-[COM.7] {kind: rule; derives: STR.2; status: proposal}
+[COM.7] {kind: rule; derives: STR.2}
 Properties of a [[communication]]: fidelity, shared [[language]], direction, timing (immediate or deferred) and recipient (person, agent or [[environment]]).
 
 ## 3. Intent
@@ -78,7 +78,7 @@ Managing [[tasks]] covers execution, [[verification]] and measurement.
 [TSK.4] {kind: rule; derives: PUR.1}
 [[decomposition]] is the methodology: a way of thinking for solving problems. It makes the methodology recursive: a [[task]] [[decomposes]] into [[tasks]], and each one again has its own [[intent]], [[capability]] and [[quality]].
 
-[TSK.5] {kind: rule; derives: TSK.4, COM.2; status: proposal}
+[TSK.5] {kind: rule; derives: TSK.4, COM.2}
 [[decomposing]] and delegating a [[task]] creates a new [[working group]], so at each [[level]] the [[agreement]] is inherited or renegotiated: the base ([[language]], [[channels]]) is inherited and the local parts ([[moments]], [[commitments]], [[exceptions]]) are adjusted.
 
 [TSK.6] {kind: rule; derives: TSK.4}
@@ -163,13 +163,13 @@ Metadata keys: kind (definition, rule, [[claim]] or question); defines and varia
 [SLP.7] {kind: rule; derives: SLP.5}
 Every use of a [[term]] is written between double square brackets, in one of the variants its definition declares; marking it is the formalisation. Text that is not marked is ordinary vocabulary.
 
-[SLP.22] {kind: rule; derives: SLP.7; status: proposal}
+[SLP.22] {kind: rule; derives: SLP.7}
 Text between backticks is a literal and is not checked for unmarked variants.
 
 [SLP.8] {kind: rule; derives: SLP.7}
 Definitions live only in the [[glossary]]; each one uses only [[terms]] defined before it, and never its own [[term]].
 
-[SLP.9] {kind: rule; derives: SLP.3; status: proposal}
+[SLP.9] {kind: rule; derives: SLP.3}
 | [[figure]] | Violation |
 |---|---|
 | [[form]] | a malformed [[element]] header; a duplicate identifier; an invalid kind; a missing required key; text outside [[elements]] and headings; an unmarked occurrence of a declared variant; three or more words from the Spanish stopword list in one [[element]]; a definition that uses its own [[term]] |
@@ -183,7 +183,7 @@ Definitions live only in the [[glossary]]; each one uses only [[terms]] defined 
 [SLP.10] {kind: rule; derives: SLP.9}
 Counting is pure: an [[element]] counts in every [[figure]] it breaks. The [[slop]] of an [[artefact]] is the sum of its violations over all [[figures]], with no weights; an [[artefact]] is [[impeccable]] if and only if that sum is zero.
 
-[SLP.11] {kind: rule; derives: SLP.9; status: proposal}
+[SLP.11] {kind: rule; derives: SLP.9}
 Contradiction and redundancy become countable when [[elements]] are written as logical formulas: a contradiction is a minimal unsatisfiable subset, and an [[element]] is redundant when the rest entails it. Once a logic is chosen, the [[judgement]] moves from [[verification]] to formalisation, where it is made when an [[element]] is formalised, recorded, and made again only when that [[element]] or a definition it uses changes. The logic must be decidable; description logics are the candidate.
 
 [SLP.12] {kind: rule; derives: SLP.11}
@@ -219,7 +219,7 @@ Until a logic is chosen, each [[judgement]] of the [[statistical verifier]], of 
 [SLP.15] {kind: rule; derives: SLP.12}
 The [[statistical verifier]] is itself evaluated against a [[corpus]] with known [[slop]], like any candidate.
 
-[SLP.16] {kind: rule; derives: SLP.11; status: proposal}
+[SLP.16] {kind: rule; derives: SLP.11}
 Tooling candidates: OWL 2 with a reasoner (HermiT, Pellet, ELK); SHACL; SPARQL or Datalog; Z3 or MARCO for minimal unsatisfiable subsets; Alloy; Attempto Controlled English (APE, RACE); Vale. Temporal and graded aspects may need TLA+ or Alloy 6.
 
 [SLP.17] {kind: rule; derives: SLP.15}
@@ -228,10 +228,10 @@ Candidates are compared following the pattern of karpathy/autoresearch: a fixed 
 [SLP.18] {kind: rule; derives: SLP.17}
 The candidates cannot read the truth, the clean [[corpus]] or the [[hold-out]]; the score is computed by a script they cannot see.
 
-[SLP.19] {kind: rule; derives: SLP.17; status: proposal}
+[SLP.19] {kind: rule; derives: SLP.17}
 The error of a candidate is the size of the symmetric difference between the detected and the true sets of violations of every [[figure]] except [[economy]], each violation identified by [[figure]], the [[elements]] involved and detail. For [[economy]], which is a count, the absolute difference between the detected and the true counts is added to the error. A candidate passes only with zero error on every [[corpus]] and identical output on two runs.
 
-[SLP.20] {kind: rule; derives: SLP.17; status: proposal}
+[SLP.20] {kind: rule; derives: SLP.17}
 Ties go to the candidate with fewer non-blank lines of implementation and configuration.
 
 [SLP.21] {kind: rule; derives: SLP.17, TSK.6}
@@ -242,7 +242,7 @@ The comparison loop is a delegated [[task]] with its own [[agreement]]: autonomo
 [OPN.1] {kind: question; derives: STR.4}
 Is [[quality]] a property of the result, or of the relation between [[task]] and result?
 
-[OPN.2] {kind: question; derives: TSK.6; status: proposal}
+[OPN.2] {kind: question; derives: TSK.6}
 Does [[autonomy]] depend on verifiability, so that the more verifiable a result is, the more it can be delegated?
 
 [OPN.3] {kind: question; derives: TSK.3}

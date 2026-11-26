@@ -7,8 +7,7 @@ State: draft v4 passes every verification defined so far, and a second run gives
 - Tests: `python3 -m unittest discover -s tests`.
 Paid checks need `OPENROUTER_API_KEY=$(pi auth print-api-key --provider openrouter)`.
 
-Pending user decisions:
-1. Proposals that predate the 2026-11-25 delegation and were not reviewed in it: COM.7, OPN.2, SLP.11, SLP.16, SLP.19, SLP.20, SLP.22, SLP.9, TSK.5. SLP.9, SLP.11 and SLP.19 were edited under the delegation.
+Pending user decisions: none. The draft has no elements marked proposal.
 
 Also open:
 - SLP.13 judges redundancy element by element; SLP.9 counts economy as |Σ'| minus the smallest equivalent subset. They differ when two elements are redundant with each other.
